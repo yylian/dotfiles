@@ -1,0 +1,119 @@
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias l="ls -lah -G"
+alias py="open -a /Applications/PyCharm*.app"
+alias ts='tmux ls'
+alias tk='tmux kill-server'
+alias reload='source ~/.zshrc'
+
+f() {
+	grep -rl "$1" .
+}
+
+# git
+
+alias gst="git status"
+alias gco="git checkout"
+alias gitupdateandclean="git pull && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias gh="open \`git remote -v | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/git@/http:\/\//' -e's/\.git$//' | sed -E 's/(\/\/[^:]*):/\1\//'\`"
+
+# Docker
+
+alias dockspace="docker system df"
+alias dockfree="docker volume prune"
+
+function dockstop()
+{
+  docker stop $(docker ps -qa)
+}
+
+function dockrm()
+{
+  docker rm $(docker ps -qa)
+}
+
+function dockclear()
+{
+  printf "\nStop all docker containers\n"
+
+  dockstop
+
+  printf "\nRemove all docker containers\n"
+
+  dockrm
+}
+
+function dockpurge()
+{
+  dockclear
+
+  printf "\nRemove all docker images\n"
+
+  docker rmi --force $(docker images -qa)
+
+  docker volume rm $(docker volume ls -q)
+}
+
+function dockbash()
+{
+  docker exec \
+    --interactive \
+    --tty \
+    $1 bash
+}
+
+function docklogs()
+{
+  docker logs \
+    --follow \
+    $1
+}
+
+alias dockup="docker-compose up -d"
+alias dockdown="docker-compose down"
+alias dockps="docker ps"
+alias dockpsa="docker ps -a"
+
+function dock()
+{
+  printf "=========================================================\n"
+  printf "=                       DOCK HELP                       =\n"
+  printf "=========================================================\n"
+  printf "dockspace - Show disk usage of Docker\n"
+  printf "dockfree - Remove unused volumes\n"
+  printf "dockstop - Stop all running containers\n"
+  printf "dockrm - Remove all containers\n"
+  printf "dockclear - Stop and remove all containers\n"
+  printf "dockpurge - Remove all containers, images and volumes\n"
+  printf "dockbash <CONTAINER_ID> - Open bash inside a container\n"
+  printf "docklogs <CONTAINER_ID> - Open docker logs with follow mode\n"
+  printf "dockup - docker-compose up -d\n"
+  printf "dockdown - docker-compose down\n"
+  printf "dockps - docker ps\n"
+  printf "dockpsa - docker ps -a\n"
+}
+
+# .NET Core
+
+alias dotbu="dotnet build"
+alias dotre="dotnet restore"
+alias dotru="dotnet run"
+alias dotde="ASPNETCORE_ENVIRONMENT=\"Development\" dotnet run"
+
+function dotsetup()
+{
+  root_directory=$(pwd)
+
+  csproj_file_paths=($(find $(pwd) -name '*.csproj'))
+
+  for csproj_file_path in "${csproj_file_paths[@]}"
+  do
+    csproj_file_directory=${csproj_file_path%/*}
+
+    cd $csproj_file_directory
+
+    dotre
+  done
+
+  cd $root_directory
+}

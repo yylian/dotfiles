@@ -1,0 +1,26 @@
+## Things to do after finish
+
+ - login to 1 password
+ - add shkey to git
+ - login to telegram
+ - configure bartender
+ - configure to mail, calendar
+ - configure sidebar folders in finder
+ - add bartender, amphetamine and middleclick to autostart
+ - install and configure amphetamine
+ - import zsh history
+ - set passwort request after sleep to immediately
+ - acitvate programms in System Preferences > Security&Privacy > Privacy > Accessibility
+ - change name of mac in  System Preferences > Release
+
+## Other things to do after finish
+
+ - install .Net core
+ - login to office package
+ - login to slack
+ - slack theme: #2e3136,#282b30,#282b30,#818386,#282b30,#ffffff,#43b581,#38e8d9
+ - add 1 password account
+ - add project bash variables
+ - add vmware key
+ - add shh keys and gpg keys
+ - add ausbildungsnachweismaker
