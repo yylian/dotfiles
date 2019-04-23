@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Install commandline tools
+# Install basics
 
 brew install zsh
 brew install zsh-completions
@@ -16,7 +16,6 @@ brew install midnight-commander
 brew install z
 
 brew cask install telegram
-brew cask install pycharm-ce
 brew cask install bartender
 brew cask install 1password
 brew cask install google-chrome
@@ -30,10 +29,8 @@ brew cask install iterm2
 brew cask install hyper
 brew cask install alfred
 brew cask install microsoft-remote-desktop-beta
-brew cask install filezilla
-brew cask install steam
 
-# Install other apps
+# Install currently relevant
 
 brew install pandoc
 
@@ -45,3 +42,5 @@ brew cask install gpg-suite
 brew cask install microsoft-office
 brew cask install camunda-modeler
 brew cask install minikube
+brew cask install pycharm-ce
+brew cask install steam
