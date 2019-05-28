@@ -14,7 +14,7 @@ f() {
 
 alias gst="git status"
 alias gco="git checkout"
-alias gitupdateandclean="git pull && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias gitupdateandclean="git pull --all && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 alias gh="open \`git remote -v | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/git@/http:\/\//' -e's/\.git$//' | sed -E 's/(\/\/[^:]*):/\1\//'\`"
 
 # Docker
