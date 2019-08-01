@@ -5,6 +5,7 @@ alias py="open -a /Applications/PyCharm*.app"
 alias ts='tmux ls'
 alias tk='tmux kill-server'
 alias reload='source ~/.zshrc'
+alias glog='git log --oneline --decorate --graph'
 
 f() {
 	grep -rl "$1" .

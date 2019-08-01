@@ -25,7 +25,7 @@ brew cask install virtualbox
 brew cask install vmware-fusion
 brew cask install visual-studio-code
 brew cask install vlc
-brew cask install iterm2
+brew cask install iterm2-nightly
 brew cask install hyper
 brew cask install alfred
 brew cask install microsoft-remote-desktop-beta
