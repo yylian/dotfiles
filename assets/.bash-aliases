@@ -5,7 +5,6 @@ alias py="open -a /Applications/PyCharm*.app"
 alias ts='tmux ls'
 alias tk='tmux kill-server'
 alias reload='source ~/.zshrc'
-alias glog='git log --oneline --decorate --graph'
 
 f() {
 	grep -rl "$1" .
@@ -13,6 +12,7 @@ f() {
 
 # git
 
+alias glog='git log --oneline --decorate --graph'
 alias gst="git status"
 alias gco="git checkout"
 alias gitupdateandclean="git pull --all && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
@@ -118,3 +118,19 @@ function dotsetup()
 
   cd $root_directory
 }
+
+export createSLN () {
+
+    CURRENT_PATH="$(pwd)"
+    SLN_NAME="${CURRENT_PATH##*/}"
+    SLN_FILE="${SLN_NAME}.sln"
+
+    rm -f "$SLN_FILE"
+
+    dotnet new sln --name "$SLN_NAME"
+
+    LC_ALL=C find . -name "*.csproj" ! -path "*GiroEvents*" -exec dotnet sln "$SLN_FILE" add {} ';'
+}
+
+alias rider="createSLN && rider"
+

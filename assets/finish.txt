@@ -2,9 +2,8 @@
 
  - login to 1 password
  - add shkey to git
- - login to telegram
  - configure bartender
- - configure to mail, calendar
+ - configure mail, calendar
  - configure sidebar folders in finder
  - add bartender, amphetamine and middleclick to autostart
  - install and configure amphetamine
@@ -23,4 +22,3 @@
  - add project bash variables
  - add vmware key
  - add shh keys and gpg keys
- - add ausbildungsnachweismaker
