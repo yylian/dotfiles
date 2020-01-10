@@ -1,30 +1,27 @@
-# Load files
+# Basics
+export PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin"
+
+export PATH=/Library/TeX/texbin:$PATH
+
 source ~/.bash-aliases
 source ~/.constants
+
 # z
 source /usr/local/etc/profile.d/z.sh
 
+# zsh
 export ZSH="/Users/$USER/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-# Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# plugins
+plugins=( git gitfast z tmux )
 
-# Add plugins wisely, as too many plugins slow down shell startup.
-plugins=( git gitfast z )
-
-# Path configuration
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin"
-
-export PATH="$PATH:$HOME/.dotnet/tools/"
-
-# Set titlebar color
-echo -e -n "\033]6;1;bg;red;brightness;0\a"
-echo -e -n "\033]6;1;bg;green;brightness;0\a"
-echo -e -n "\033]6;1;bg;blue;brightness;0\a"
-
-# Set title for titlebar
+# title coloring, text, deactivation
+echo -ne "\033]6;1;bg;red;brightness;0\a"
+echo -ne "\033]6;1;bg;green;brightness;0\a"
+echo -ne "\033]6;1;bg;blue;brightness;0\a"
 echo -ne "\033]0;""\007"
+DISABLE_AUTO_TITLE="true"
 
 # git-prompt
 PROMPT='%{$fg[cyan]%}%c%{$reset_color%}$(git_prompt_info) '

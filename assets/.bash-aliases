@@ -5,14 +5,23 @@ alias py="open -a /Applications/PyCharm*.app"
 alias ts='tmux ls'
 alias tk='tmux kill-server'
 alias reload='source ~/.zshrc'
+alias find_big_files='du -hs $(ls)'
+alias tkill="tmux kill-server"
+alias treload="tmux source ~/.tmux.conf"
+alias git="LANG=en_GB git"
 
 f() {
 	grep -rl "$1" .
 }
 
+server () {
+  local port="${1:-8000}"
+  python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "$port"
+}
+
 # git
 
-alias glog='git log --oneline --decorate --graph'
+alias glog='git log --oneline --decorate --graph --all'
 alias gst="git status"
 alias gco="git checkout"
 alias gitupdateandclean="git pull --all && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
