@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if ! [ -z $TMUX ];
+then
+    tmux select-pane -t 0
+    exit 1
+fi
+
+tmux new-session -d 'dev'
+tmux split-window -v
+tmux split-window -h
+tmux split-window -v
+tmux -2 attach-session -d

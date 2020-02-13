@@ -7,6 +7,7 @@ brew install zsh-completions
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Install applications
+brew install findomain
 brew install elixir
 brew install htop
 brew install hub
