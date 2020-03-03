@@ -13,6 +13,7 @@ brew install htop
 brew install hub
 brew install midnight-commander
 brew install neovim
+brew isntall nvm
 brew install pandoc
 brew install python3
 brew install tmux
