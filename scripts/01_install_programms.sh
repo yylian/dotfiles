@@ -44,3 +44,5 @@ brew install mas
 mas install 1295203466
 # Amphetamine
 mas install 937984704
+# Gestimer
+mas install 990588172
