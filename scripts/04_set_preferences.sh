@@ -62,5 +62,8 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 # echo "Set a shorter Delay until key repeat"
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
+# Set hotkeys
+defaults import com.apple.symbolichotkeys assets/com.apple.symbolichotkeys
+
 # Reset dock
 killall Dock
