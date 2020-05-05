@@ -5,7 +5,7 @@
  - configure bartender
  - configure mail, calendar
  - configure sidebar folders in finder
- - add bartender, amphetamine and middleclick to autostart
+ - add bartender, amphetamine, gestimer and middleclick to autostart
  - configure amphetamine
  - import zsh history
  - set passwort request after sleep to immediately
