@@ -1,7 +1,8 @@
 alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 alias l="ls -lah -G"
-alias py="open -a /Applications/PyCharm*.app"
+alias pycharm="open -a /Applications/PyCharm.app"
+alias webstorm="open -a /Applications/WebStorm.app"
 alias ts='tmux ls'
 alias tk='tmux kill-server'
 alias reload='source ~/.zshrc'
@@ -25,7 +26,6 @@ alias glog='git log --oneline --decorate --graph --all'
 alias gst="git status"
 alias gco="git checkout"
 alias gitupdateandclean="git pull --all && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
-alias gh="open \`git remote -v | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/git@/http:\/\//' -e's/\.git$//' | sed -E 's/(\/\/[^:]*):/\1\//'\`"
 
 # Docker
 
@@ -140,6 +140,3 @@ export createSLN () {
 
     LC_ALL=C find . -name "*.csproj" ! -path "*GiroEvents*" -exec dotnet sln "$SLN_FILE" add {} ';'
 }
-
-alias rider="createSLN && rider"
-
