@@ -31,3 +31,4 @@ git config --global alias.co 'checkout'
 git config --global alias.cp 'cherry-pick'
 git config --global alias.lg 'log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %C(bold)%s %Creset| %Cgreen%cr %C(white)%cn%Creset' --abbrev-commit --date=relative'
 git config --global alias.wdiff 'diff --color-words'
+git config --global pull.rebase true
