@@ -13,4 +13,4 @@ brew install git
 
 git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 
-. "${REPO_NAME}/install.sh"
+bash "${REPO_NAME}/install.sh"

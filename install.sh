@@ -9,6 +9,7 @@ fi
 
 echo $(pwd)
 echo $REPO_NAME
+echo "ll"
 
 bash scripts/01_install_programms.sh
 bash scripts/02_link-files.sh
