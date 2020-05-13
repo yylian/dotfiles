@@ -17,7 +17,7 @@ bash scripts/03_configure_applications.sh
 bash scripts/04_set_preferences.sh
 bash scripts/05_generate_ssh_key.sh
 
-open "${DOTFILES_PATH}/finish.md"
+open "${DOTFILES_PATH}/finish.txt"
 
 
 # z
