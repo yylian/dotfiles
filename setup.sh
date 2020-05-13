@@ -1,6 +1,6 @@
 #! /bin/bash
 
-REPO_NAME=".files"
+export REPO_NAME=".files"
 
 if test ! $(which brew); then
     echo "Installing homebrew"
