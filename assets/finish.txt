@@ -1,7 +1,7 @@
 ## Things to do configure manually
 
- - login to 1 password
- - add shkey to git
+ - login to 1Password, Slack, Office365
+ - add ssh key to git
  - configure bartender
  - configure mail, calendar
  - configure sidebar folders in finder
@@ -10,9 +10,6 @@
  - import zsh history
  - set passwort request after sleep to immediately
  - acitvate programms in System Preferences > Security&Privacy > Privacy > Accessibility
- - change name of mac in  System Preferences > Release
- - login to office package
- - login to slack
  - slack theme: #2e3136,#282b30,#282b30,#818386,#282b30,#ffffff,#43b581,#38e8d9
  - add vmware key
 

@@ -1,6 +1,10 @@
 # Set backgorund image
 osascript -e 'tell application "Finder" to set desktop picture to "/Users/julianjarminowski/Downloads/dotfiles/.files/assets/background.png" as POSIX file'
 
+# Set Computer Name
+
+scutil --set ComputerName "Julians MacBook"
+
 # Change theme to dark
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
@@ -63,7 +67,7 @@ defaults write NSGlobalDomain KeyRepeat -int 0
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Set hotkeys
-defaults import com.apple.symbolichotkeys assets/com.apple.symbolichotkeys
+defaults import com.apple.symbolichotkeys symlinks/com.apple.symbolichotkeys
 
 # Reset dock
 killall Dock

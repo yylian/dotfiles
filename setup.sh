@@ -1,6 +1,6 @@
 #! /bin/bash
 
-echo 'Installing brew packages'
+echo 'Installing brew'
 
 if test ! $(which brew); then
     echo "Installing homebrew"

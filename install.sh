@@ -12,13 +12,7 @@ bash scripts/03_configure_applications.sh
 bash scripts/04_set_preferences.sh
 bash scripts/05_generate_ssh_key.sh
 
-cp assets/finish.txt ~/Desktop/
-
-FILE="~/Desktop/finish.txt"
-if test -f "$FILE"; then
-    echo "\n" >> $FILE
-    cat ~/.ssh/id_rsa.pub >> $FILE
-fi
+open assets/finish.txt
 
 # z
 source /usr/local/etc/profile.d/z.sh
