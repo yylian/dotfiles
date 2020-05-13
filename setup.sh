@@ -5,7 +5,7 @@ if test ! $(which brew); then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 
 brew install git
 

@@ -6,6 +6,8 @@ then
     exit 1
 fi
 
+echo $(pwd)
+
 bash scripts/01_install_programms.sh
 bash scripts/02_link-files.sh
 bash scripts/03_configure_applications.sh
