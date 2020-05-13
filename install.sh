@@ -6,7 +6,10 @@ then
     exit 1
 fi
 
+
+
 echo $(pwd)
+echo $REPO_NAME
 
 bash scripts/01_install_programms.sh
 bash scripts/02_link-files.sh
