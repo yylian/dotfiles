@@ -1,5 +1,5 @@
 # Basics
-export PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/Users/$USER/bin/"
+export PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin::/Users/${USER}/bin"
 
 source ~/.bash-aliases
 source ~/.constants

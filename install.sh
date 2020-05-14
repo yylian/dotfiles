@@ -8,14 +8,15 @@ fi
 
 REPO_NAME="${REPO_NAME:.files}"
 CURRENT_PATH=$(pwd)
-DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
+export DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
+SCRIPTS_PATH="${DOTFILES_PATH}/scripts"
 
 
-bash scripts/01_install_programms.sh
-bash scripts/02_link-files.sh
-bash scripts/03_configure_applications.sh
-bash scripts/04_set_preferences.sh
-bash scripts/05_generate_ssh_key.sh
+bash "${SCRIPTS_PATH}/install_programms.sh"
+bash "${SCRIPTS_PATH}/link_files.sh"
+bash "${SCRIPTS_PATH}/configure_applications.sh"
+bash "${SCRIPTS_PATH}/set_preferences.sh"
+bash "${SCRIPTS_PATH}/generate_ssh_key.sh"
 
 open "${DOTFILES_PATH}/finish.txt"
 

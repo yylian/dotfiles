@@ -1,7 +1,7 @@
 mkdir ~/.ssh
 cd ~/.ssh
 
-echo "Write your github mail adress\n"
+echo "Write the mail adress for your ssh-key\n"
 read MAIL
 echo ""
 
