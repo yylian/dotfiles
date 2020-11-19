@@ -29,7 +29,6 @@ alias l="ls -lah -G"
 alias reload='source ~/.zshrc'
 alias find_big_files='du -hs $(ls)'
 
-alias git="LANG=en_GB git"
 alias glog='git log --oneline --decorate --graph --all'
 alias gst="git status"
 alias gco="git checkout"
