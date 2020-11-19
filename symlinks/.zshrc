@@ -42,6 +42,15 @@ f() {
 	grep -rl "$1" .
 }
 
+tdev() {
+  tmux new-session -d -s dev
+  tmux new-window -n dev
+  tmux split-window -h
+  tmux split-window -v
+  tmux selectp -t 0
+  tmux attach -t dev
+}
+
 # Additional Path
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
