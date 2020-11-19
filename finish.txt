@@ -1,16 +1,9 @@
-## Things to do configure manually
-
- - login to 1Password, Slack, Office365
- - add ssh key to git
- - configure bartender
- - configure mail, calendar
- - configure sidebar folders in finder
- - add bartender, amphetamine, gestimer and middleclick to autostart
- - configure amphetamine
- - import zsh history
- - set passwort request after sleep to immediately
- - acitvate programms in System Preferences > Security&Privacy > Privacy > Accessibility
- - slack theme: #2e3136,#282b30,#282b30,#818386,#282b30,#ffffff,#43b581,#38e8d9
- - add vmware key
+- configure sidebar folders in finder
+- set passwort request after sleep to immediately
+- configure amphetamine
+- configure mail, calendar
+- configure bartender
+- add bartender, amphetamine, gestimer and middleclick to autostart
+- import ssh-key from 1 password and use 1password clii for this
 
  A reboot is needed to activate all settings
