@@ -1,11 +1,8 @@
 # Basics
 export PATH="/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/local/sbin"
 
-# z
-source /usr/local/etc/profile.d/z.sh
-
 # zsh
-export ZSH="/Users/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
 # plugins
