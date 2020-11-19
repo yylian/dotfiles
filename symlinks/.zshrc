@@ -1,8 +1,5 @@
 # Basics
-export PATH="/usr/local/opt/gnu-getopt/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin::/Users/${USER}/bin"
-
-source ~/.bash-aliases
-source ~/.constants
+export PATH="/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/local/sbin"
 
 # z
 source /usr/local/etc/profile.d/z.sh
@@ -13,13 +10,6 @@ source $ZSH/oh-my-zsh.sh
 
 # plugins
 plugins=( git gitfast z tmux )
-
-# title coloring, text, deactivation
-echo -ne "\033]6;1;bg;red;brightness;0\a"
-echo -ne "\033]6;1;bg;green;brightness;0\a"
-echo -ne "\033]6;1;bg;blue;brightness;0\a"
-echo -ne "\033]0;""\007"
-DISABLE_AUTO_TITLE="true"
 
 # git-prompt
 PROMPT='%{$fg[cyan]%}%c%{$reset_color%}$(git_prompt_info) '
@@ -37,9 +27,32 @@ function git_prompt_info() {
   fi
 }
 
+# Alias
+alias l="ls -lah -G"
+alias reload='source ~/.zshrc'
+alias find_big_files='du -hs $(ls)'
+
+alias git="LANG=en_GB git"
+alias glog='git log --oneline --decorate --graph --all'
+alias gst="git status"
+alias gco="git checkout"
+alias gitupdateandclean="git pull --all && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+
+f() {
+	grep -rl "$1" .
+}
+
+# Additional Path
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # add latext to path on macos
 PATH=$PATH:/usr/texbin:/Library/TeX/texbin
+
+# iterm2
+echo -ne "\033]6;1;bg;red;brightness;0\a"
+echo -ne "\033]6;1;bg;green;brightness;0\a"
+echo -ne "\033]6;1;bg;blue;brightness;0\a"
+echo -ne "\033]0;""\007"
+DISABLE_AUTO_TITLE="true"
