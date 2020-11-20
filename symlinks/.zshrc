@@ -1,5 +1,7 @@
+echo $PATH
 # Basics
-export PATH="/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/sbin:/usr/sbin:/sbin:/opt/local/sbin"
+export PATH="/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/sbin:/usr/sbin:/opt/local/sbin"
+export LANG=en_US.UTF-8
 
 # zsh
 export ZSH="$HOME/.oh-my-zsh"
@@ -8,31 +10,40 @@ source $ZSH/oh-my-zsh.sh
 # plugins
 plugins=( git gitfast z tmux )
 
-# git-prompt
-PROMPT='%{$fg[cyan]%}%c%{$reset_color%}$(git_prompt_info) '
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}@%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$FG[003]%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$FG[049]%}"
+PROMPT='%F{cyan}%c$(GIT_PROMPT)%f '
 
-function git_prompt_info() {
-  local ref
-  if [[ "$(command git config —get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
-    ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
-    ref=$(command git rev-parse —short HEAD 2> /dev/null) || return 0
-    echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(parse_git_dirty)${ref#refs/heads/}$ZSH_THEME_GIT_PROMPT_SUFFIX"
+function GIT_PROMPT() {
+  # Get branch name or short SHA1 commit hash. Fails and exits when not in a git directory
+  reference=$(GIT_PROMPT_WRAPPER symbolic-ref HEAD 2> /dev/null) || \
+  reference=$(GIT_PROMPT_WRAPPER rev-parse --short HEAD 2> /dev/null) || return 0
+  REFERENCE=${reference#refs/heads/}
+
+  echo "%F{white}.$(GIT_STATUS_COLOR)$REFERENCE"
+}
+
+function GIT_STATUS_COLOR() {
+  if [[ -n $(GIT_PROMPT_WRAPPER status --porcelain | tail -n1) ]]; then
+    echo "%F{yellow}"
+  else
+    echo "%F{green}"
   fi
 }
 
+# Wrap git into function to avoid interfering with git commands run by the user
+function GIT_PROMPT_WRAPPER() {
+  GIT_OPTIONAL_LOCKS=0 command git "$@"
+}
+
 # Alias
-alias l="ls -lah -G"
+alias l="ls -lahF -G"
 alias reload='source ~/.zshrc'
 alias find_big_files='du -hs $(ls)'
 
 alias glog='git log --oneline --decorate --graph --all'
 alias gst="git status"
 alias gco="git checkout"
-alias gitupdateandclean="git pull --all && git fetch --prune && git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias gitupdate="git pull --all && git fetch --prune"
+alias gitcleanbranches="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 
 f() {
 	grep -rl "$1" .

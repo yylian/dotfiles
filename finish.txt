@@ -4,6 +4,6 @@
 - configure mail, calendar
 - configure bartender
 - add bartender, amphetamine, gestimer and middleclick to autostart
-- import ssh-key from 1 password and use 1password clii for this
+- import ssh-key from 1 password and use 1password cli for this
 
  A reboot is needed to activate all settings
