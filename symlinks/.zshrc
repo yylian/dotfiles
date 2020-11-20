@@ -1,15 +1,13 @@
-echo $PATH
 # Basics
-export PATH="/usr/local/bin:/usr/bin:/bin:/opt/local/bin:/usr/local/sbin:/usr/sbin:/opt/local/sbin"
 export LANG=en_US.UTF-8
 
-# zsh
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
+# Set config for tabbing
+export LS_COLORS='di=1;34:ln=35:so=32:pi=0;33:ex=32:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=1;34:ow=1;34:'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-# plugins
-plugins=( git gitfast z tmux )
-
+# Prompt
+setopt PROMPT_SUBST
 PROMPT='%F{cyan}%c$(GIT_PROMPT)%f '
 
 function GIT_PROMPT() {
@@ -17,8 +15,7 @@ function GIT_PROMPT() {
   reference=$(GIT_PROMPT_WRAPPER symbolic-ref HEAD 2> /dev/null) || \
   reference=$(GIT_PROMPT_WRAPPER rev-parse --short HEAD 2> /dev/null) || return 0
   REFERENCE=${reference#refs/heads/}
-
-  echo "%F{white}.$(GIT_STATUS_COLOR)$REFERENCE"
+  echo "%F{white}.$(GIT_STATUS_COLOR)${REFERENCE}"
 }
 
 function GIT_STATUS_COLOR() {
@@ -35,7 +32,8 @@ function GIT_PROMPT_WRAPPER() {
 }
 
 # Alias
-alias l="ls -lahF -G"
+alias ls="ls -G"
+alias l="ls -lahF"
 alias reload='source ~/.zshrc'
 alias find_big_files='du -hs $(ls)'
 
@@ -45,10 +43,7 @@ alias gco="git checkout"
 alias gitupdate="git pull --all && git fetch --prune"
 alias gitcleanbranches="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 
-f() {
-	grep -rl "$1" .
-}
-
+alias tkill="tmux kill-server"
 tdev() {
   tmux new-session -d -s dev
   tmux new-window -n dev
@@ -58,17 +53,15 @@ tdev() {
   tmux attach -t dev
 }
 
-# Additional Path
+f() {
+	grep -rl "$1" .
+}
+
+# Source z
+[[ -r "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
+[[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
+
+# Source nvm
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# add latext to path on macos
-PATH=$PATH:/usr/texbin:/Library/TeX/texbin
-
-# iterm2
-echo -ne "\033]6;1;bg;red;brightness;0\a"
-echo -ne "\033]6;1;bg;green;brightness;0\a"
-echo -ne "\033]6;1;bg;blue;brightness;0\a"
-echo -ne "\033]0;""\007"
-DISABLE_AUTO_TITLE="true"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
