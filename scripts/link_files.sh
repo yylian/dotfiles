@@ -4,8 +4,6 @@ mkdir ~/dev
 mkdir ~/Virtuelle_Maschinen
 mkdir ~/.ssh
 
-touch ~/.hushlogin
-
 ln -sf "${SYMLINK_DIRECTORY}/.gitignore" $HOME
 ln -sf "${SYMLINK_DIRECTORY}/.tmux.conf" $HOME
 ln -sf "${SYMLINK_DIRECTORY}/.zshrc" $HOME
