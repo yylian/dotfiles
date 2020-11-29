@@ -16,7 +16,6 @@ bash "${SCRIPTS_PATH}/install_programms.sh"
 bash "${SCRIPTS_PATH}/link_files.sh"
 bash "${SCRIPTS_PATH}/configure_applications.sh"
 bash "${SCRIPTS_PATH}/set_preferences.sh"
-bash "${SCRIPTS_PATH}/generate_ssh_key.sh"
 
 open "${DOTFILES_PATH}/finish.txt"
 

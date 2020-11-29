@@ -12,9 +12,6 @@ code --install-extension k--kato.docomment
 code --install-extension jchannon.csharpextensions
 code --install-extension ms-vscode.csharp
 
-# Intellij
-defaults write com.jetbrains.intellij.ce NSNavLastRootDirectory ~/dev/intellij/
-
 # git
 cp assets/.gitignore ~/
 git config --global core.excludesfile '~/.gitignore'

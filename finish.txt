@@ -1,9 +1,6 @@
 - configure sidebar folders in finder
 - set passwort request after sleep to immediately
-- configure amphetamine
-- configure mail, calendar
-- configure bartender
+- configure amphetamine, bartender
 - add bartender, amphetamine, gestimer and middleclick to autostart
-- import ssh-key from 1 password and use 1password cli for this
 
  A reboot is needed to activate all settings
