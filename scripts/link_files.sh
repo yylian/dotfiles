@@ -6,7 +6,8 @@ mkdir ~/.ssh
 
 touch ~/.hushlogin
 
-ln -sf "${SYMLINK_DIRECTORY}/.gitignore" "~/."
-ln -sf "${SYMLINK_DIRECTORY}/.tmux.conf" "~/."
-ln -sf "${SYMLINK_DIRECTORY}/.zshrc" "~/."
-ln -sf "${SYMLINK_DIRECTORY}/ssh_config" "~/.ssh/config"
+ln -sf "${SYMLINK_DIRECTORY}/.gitignore" $HOME
+ln -sf "${SYMLINK_DIRECTORY}/.tmux.conf" $HOME
+ln -sf "${SYMLINK_DIRECTORY}/.zshrc" $HOME
+ln -sf "${SYMLINK_DIRECTORY}/.alacritty.yml" $HOME
+ln -sf "${SYMLINK_DIRECTORY}/ssh_config" "$HOME/.ssh/config"
