@@ -1,10 +1,6 @@
 # Set backgorund image
 osascript -e 'tell application "Finder" to set desktop picture to "/Users/julianjarminowski/Downloads/dotfiles/.files/assets/background.png" as POSIX file'
 
-# Set Computer Name
-
-scutil --set ComputerName "Julians MacBook"
-
 # Change theme to dark
 defaults write NSGlobalDomain AppleInterfaceStyle Dark
 
@@ -33,38 +29,17 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerTapGesture -
 
 # This sets the keyboard settings
 defaults write -g com.apple.keyboard.fnState -bool true
-defaults write -g InitialKeyRepeat -int 10
-defaults write NSGlobalDomain KeyRepeat -int 2
-
-# echo "Finder: show all filename extensions"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-# echo "show hidden files by default"
-defaults write com.apple.Finder AppleShowAllFiles -bool true
-
-# echo "show the ~/Library folder in Finder"
-chflags nohidden ~/Library
-
-# echo "Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
+defaults write NSGlobalDomain KeyRepeat -int 0
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-# Show remaining battery time; hide percentage
-defaults write com.apple.menuextra.battery ShowPercent -string "YES"
-
-# echo "Show Path bar in Finder"
-defaults write com.apple.finder ShowPathbar -bool true
-
-# echo "Show Status bar in Finder"
-defaults write com.apple.finder ShowStatusBar -bool true
-
-# echo "Disable press-and-hold for keys in favor of key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
-# echo "Set a blazingly fast keyboard repeat rate"
-defaults write NSGlobalDomain KeyRepeat -int 0
-
-# echo "Set a shorter Delay until key repeat"
-defaults write NSGlobalDomain InitialKeyRepeat -int 15
+# Make finder more explicit
+chflags nohidden ~/Library
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write com.apple.Finder AppleShowAllFiles -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
 
 # Set hotkeys
 defaults import com.apple.symbolichotkeys symlinks/com.apple.symbolichotkeys
