@@ -1,11 +1,5 @@
 #!/bin/bash
 
-# Install zsh
-
-brew install zsh
-brew install zsh-completions
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
 # Install applications
 brew install findomain
 brew install elixir
@@ -14,7 +8,6 @@ brew install hub
 brew install midnight-commander
 brew install neovim
 brew isntall nvm
-brew install pandoc
 brew install python3
 brew install tmux
 brew install wget
@@ -26,9 +19,9 @@ brew cask install bartender
 brew cask install docker
 brew cask install firefox
 brew cask install google-chrome
-brew cask install iterm2-nightly
+brew cask install alacritty
 brew cask install middleclick
-brew cask install pycharm-ce
+brew cask install pycharm
 brew cask install slack
 brew cask install telegram-desktop
 brew cask install virtualbox

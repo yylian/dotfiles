@@ -1,6 +1,0 @@
-- configure sidebar folders in finder
-- set passwort request after sleep to immediately
-- configure amphetamine, bartender
-- add bartender, amphetamine, gestimer and middleclick to autostart
-
- A reboot is needed to activate all settings
