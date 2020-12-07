@@ -4,9 +4,9 @@ export LANG=en_US.UTF-8
 # Set config for tabbing
 export LS_COLORS='di=1;34:ln=35:so=32:pi=0;33:ex=32:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=1;34:ow=1;34:'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
-#zstyle ':completion:*' menu select
-#zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# setopt menu_complete
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' menu select
+setopt menu_complete
 
 # Better history searching
 autoload -U history-search-end
