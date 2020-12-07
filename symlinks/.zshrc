@@ -40,7 +40,7 @@ function GIT_PROMPT_WRAPPER() {
 }
 
 # Alias
-alias ls="ls -G"
+alias ls="ls --color=auto"
 alias l="ls -lahF"
 alias reload='source ~/.zshrc'
 alias find_big_files='du -hs $(ls)'
@@ -73,3 +73,6 @@ f() {
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+# Do this only on macos
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

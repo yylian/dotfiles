@@ -12,6 +12,7 @@ brew install python3
 brew install tmux
 brew install wget
 brew install z
+brew install coreutils
 
 brew cask install 1password
 brew cask install alfred
