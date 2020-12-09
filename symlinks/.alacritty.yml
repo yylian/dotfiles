@@ -2,20 +2,6 @@ scrolling:
   history: 10000
   multiplier: 3
 
-key_bindings:
-  - { key: T,       mods: Command, action: SpawnNewInstance }
-  - { key: Return,  mods: Command, action: ToggleSimpleFullscreen }
-  - { key: 28,      mods: Alt, chars: "{" }
-  - { key: 25,      mods: Alt, chars: "}" }
-  - { key: 37,      mods: Alt, chars: "@" }
-  - { key: 26,      mods: Alt|Shift, chars: "\\" }
-  - { key: 26,      mods: Alt, chars: "|" }
-  - { key: 23,      mods: Alt, chars: "[" }
-  - { key: 22,      mods: Alt, chars: "]" }
-
-window:
-  decorations: buttonless
-
 # Colors (Iceberg Dark)
 colors:
   primary:

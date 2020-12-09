@@ -1,0 +1,15 @@
+import:
+  - ~/.files/symlinks/.alacritty.yml
+
+window:
+  decorations:buttonless
+
+key_bindings:
+  - { key: T,       mods: Command, action: SpawnNewInstance }
+  - { key: 28,      mods: Alt, chars: "{" }
+  - { key: 25,      mods: Alt, chars: "}" }
+  - { key: 37,      mods: Alt, chars: "@" }
+  - { key: 26,      mods: Alt|Shift, chars: "\\" }
+  - { key: 26,      mods: Alt, chars: "|" }
+  - { key: 23,      mods: Alt, chars: "[" }
+  - { key: 22,      mods: Alt, chars: "]" }
