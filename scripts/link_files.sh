@@ -1,4 +1,4 @@
-SYMLINK_DIRECTORY="${DOTFILES_PATH}/symlinks"
+SYMLINK_DIRECTORY="$HOME/.files/symlinks"
 
 mkdir ~/dev
 mkdir ~/Virtuelle_Maschinen
