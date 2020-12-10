@@ -1,2 +1,2 @@
 import:
-  - ~/.files/symlinks/.alacritty.yml
+  - .files/symlinks/.alacritty.yml
