@@ -23,7 +23,7 @@ brew cask install google-chrome
 brew cask install alacritty
 brew cask install middleclick
 brew cask install pycharm
-brew cask install slack
+brew cask install microsoft-teams
 brew cask install telegram-desktop
 brew cask install virtualbox
 brew cask install visual-studio-code

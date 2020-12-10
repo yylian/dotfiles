@@ -2,7 +2,7 @@ import:
   - ~/.files/symlinks/.alacritty.yml
 
 window:
-  decorations:buttonless
+  decorations: buttonless
 
 key_bindings:
   - { key: T,       mods: Command, action: SpawnNewInstance }
