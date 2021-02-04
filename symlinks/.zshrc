@@ -1,85 +1,66 @@
-# Basics
-export LANG=en_US.UTF-8
-autoload -U compinit && compinit
-HISTFILE=~/.zsh_history
-SAVEHIST=1000000
+#! /usr/bin/env zsh
 
+autoload -Uz compinit && compinit
 
-
-# Set config for tabbing
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:ex=01;32:*.cmd=01;32:*.exe=01;32:*.com=01;32:*.btm=01;32:*.bat=01;32:*.sh=01;32:*.csh=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tz=01;31:*.rpm=01;31:*.cpio=01;31:*.jpg=01;35:*.gif=01;35:*.bmp=01;35:*.xbm=01;35:*.xpm=01;35:*.png=01;35:*.tif=01;35:'
+# Tab configuration
+setopt menu_complete
+export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
 
-# Better history searching
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
+# History file configuration
+[[ -z "$HISTFILE" ]] && HISTFILE="$HOME/.zsh_history"
+[[ "$HISTSIZE" -lt 50000 ]] && HISTSIZE=50000
+[[ "$SAVEHIST" -lt 10000 ]] && SAVEHIST=10000
 
-# Prompt
+# History search bindings
+autoload -U up-line-or-beginning-search
+autoload -U down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey "^[[A" up-line-or-beginning-search
+bindkey "^[[B" down-line-or-beginning-search
+
+# Prompt parsing
 setopt PROMPT_SUBST
-PROMPT='%F{cyan}%c$(GIT_PROMPT)%f '
+PROMPT='$(CLEAN_PROMPT)'
+
+function CLEAN_PROMPT() {
+  echo "%F{cyan}%c%f$(GIT_PROMPT)%f "
+}
 
 function GIT_PROMPT() {
-  # Get branch name or short SHA1 commit hash. Fails and exits when not in a git directory
-  reference=$(GIT_PROMPT_WRAPPER symbolic-ref HEAD 2> /dev/null) || \
-  reference=$(GIT_PROMPT_WRAPPER rev-parse --short HEAD 2> /dev/null) || return 0
-  REFERENCE=${reference#refs/heads/}
-  echo "%F{white}.$(GIT_STATUS_COLOR)${REFERENCE}"
+
+  function QUIET_GIT() {
+    GIT_OPTIONAL_LOCKS=0 command git "$@" 2>/dev/null
+  }
+
+  REFERENCE=$(QUIET_GIT symbolic-ref --short -q HEAD || QUIET_GIT rev-parse --short HEAD ) || return 0
+  [[ -n $(QUIET_GIT status --porcelain | tail -n1) ]] && STATUS_COLOR="%F{yellow}" || STATUS_COLOR="%F{green}"
+
+  echo ".${STATUS_COLOR}${REFERENCE}"
 }
 
-function GIT_STATUS_COLOR() {
-  if [[ -n $(GIT_PROMPT_WRAPPER status --porcelain | tail -n1) ]]; then
-    echo "%F{yellow}"
-  else
-    echo "%F{green}"
-  fi
-}
-
-# Wrap git into function to avoid interfering with git commands run by the user
-function GIT_PROMPT_WRAPPER() {
-  GIT_OPTIONAL_LOCKS=0 command git "$@"
-}
-
-# Alias
-alias ls="ls --color=auto"
+# Aliases definitions
+[[ "$(uname)" == "Darwin"  ]] && LS_OPTION="-G" || LS_OPTION="--color=auto"
+alias ls="ls ${LS_OPTION}"
 alias l="ls -lahF"
-alias reload='source ~/.zshrc'
-alias find_big_files='du -hs $(ls)'
+alias reload="source ~/.zshrc"
+alias findBigFiles='du -hs $(ls)'
 
-alias glog='git log --oneline --decorate --graph --all'
+alias glg="git log --oneline --decorate --graph --all"
 alias gst="git status"
 alias gco="git checkout"
-alias gitupdate="git pull --all && git fetch --prune"
-alias gitcleanbranches="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias gud="git pull --all && git fetch --prune"
+alias gbd="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
 
-alias tkill="tmux kill-server"
-tdev() {
-  tmux new-session -d -s dev
-  tmux new-window -n dev
-  tmux split-window -h
-  tmux split-window -v
-  tmux selectp -t 0
-  tmux attach -t dev
-}
-
-f() {
-	grep -rl "$1" .
-}
-
-# Source z
+# Application sourcing
 [[ -r "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
-# Source nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
-# Do this only on macos
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

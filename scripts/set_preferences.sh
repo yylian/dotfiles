@@ -40,9 +40,3 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write com.apple.Finder AppleShowAllFiles -bool true
 defaults write com.apple.finder ShowPathbar -bool true
 defaults write com.apple.finder ShowStatusBar -bool true
-
-# Set hotkeys
-defaults import com.apple.symbolichotkeys symlinks/com.apple.symbolichotkeys
-
-# Reset dock
-killall Dock
