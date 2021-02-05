@@ -80,14 +80,12 @@ defaults write com.apple.dock static-only -bool TRUE
 defaults write com.apple.dock orientation left
 osascript -e 'tell application "System Events" to set autohide of dock preferences to not (autohide of dock preferences)'
 
-#defaults write -g com.apple.keyboard.fnState -bool true
-#defaults write NSGlobalDomain KeyRepeat -int 0
-#defaults write NSGlobalDomain InitialKeyRepeat -int 15
-#defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-#defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+defaults write NSGlobalDomain KeyRepeat -int 2
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Finish
 echo "You may stillt want to configure the following things:"
-echo "1. Set passwort request after sleep to immediately"
-echo "2. Configure alfred"
-echo "3. Reboot this machine"
+echo "  - Request password after lock immediately"
+echo "  - Configure alfred"
+echo "Reboot."
