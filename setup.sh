@@ -3,7 +3,7 @@
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
 DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-SYMLINK_PATH="DOTFILES_PATH/symlinks"
+ASSETS_PATH="DOTFILES_PATH/assets"
 
 if [ "$(uname)" != "Darwin" ]
 then
@@ -61,16 +61,16 @@ git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
 git config --global pull.rebase true
 
-ln -sf "${SYMLINK_PATH}/.gitignore" $HOME
-ln -sf "${SYMLINK_PATH}/.zshrc" $HOME
-ln -sf "${SYMLINK_PATH}/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
+ln -sf "${ASSETS_PATH}/.gitignore" $HOME
+ln -sf "${ASSETS_PATH}/.zshrc" $HOME
+ln -sf "${ASSETS_PATH}/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
 
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
 
-osascript -e "tell application \"Finder\" to set desktop picture to \"${DOTFILES_PATH}/assets/background.png\" as POSIX file"
+osascript -e "tell application \"Finder\" to set desktop picture to \"${ASSETS_PATH}/background.png\" as POSIX file"
 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
