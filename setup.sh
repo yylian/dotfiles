@@ -3,7 +3,7 @@
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
 DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-ASSETS_PATH="DOTFILES_PATH/assets"
+ASSETS_PATH="${DOTFILES_PATH}/assets"
 
 if [ "$(uname)" != "Darwin" ]
 then
