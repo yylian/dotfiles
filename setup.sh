@@ -7,7 +7,7 @@ ASSETS_PATH="${DOTFILES_PATH}/assets"
 
 if [ "$(uname)" != "Darwin" ]
 then
-    echo "Aborting. These dotfiles are meant to be running on OSX"
+    echo "Aborting. These dotfiles are meant to be running on macOS"
     exit 1
 fi
 
