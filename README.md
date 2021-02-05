@@ -1,7 +1,7 @@
 # dotfiles
 
-This are my very own dotfiles. The setup script is supposed to only work on OSX,
-but the asset files like `.zshrc`, or the alacritty config, do work
+These are my very own dotfiles. The setup script is supposed to only work on
+OSX, but the asset files such as `.zshrc`, or the alacritty config, do work
 cross-platform.
 
 ## Setup
