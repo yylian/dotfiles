@@ -25,7 +25,6 @@ CLI_BREWS=(
     tmux
     wget
     z
-    coreutils
 )
 
 APP_BREWS=(
