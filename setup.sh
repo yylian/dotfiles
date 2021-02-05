@@ -64,9 +64,9 @@ ln -sf "${ASSETS_PATH}/.zshrc" $HOME
 ln -sf "${ASSETS_PATH}/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
 
 code --install-extension editorconfig.editorconfig
+code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
-code --install-extension k--kato.docomment
 
 osascript -e "tell application \"Finder\" to set desktop picture to \"${ASSETS_PATH}/background.png\" as POSIX file"
 
