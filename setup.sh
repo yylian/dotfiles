@@ -32,6 +32,7 @@ APP_BREWS=(
     1password
     alfred
     docker
+    fantastical
     firefox
     google-chrome
     alacritty
