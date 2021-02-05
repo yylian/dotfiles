@@ -31,12 +31,10 @@ CLI_BREWS=(
 APP_BREWS=(
     1password
     alfred
-    bartender
     docker
     firefox
     google-chrome
     alacritty
-    middleclick
     pycharm
     microsoft-teams
     telegram-desktop

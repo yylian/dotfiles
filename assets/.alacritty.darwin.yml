@@ -1,5 +1,5 @@
 import:
-  - ~/.files/symlinks/.alacritty.yml
+  - ~/.files/assets/.alacritty.yml
 
 window:
   decorations: buttonless
