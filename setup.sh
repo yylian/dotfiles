@@ -18,9 +18,10 @@ CLI_BREWS=(
     findomain
     git
     htop
+    mas
     neovim
     nvm
-    mas
+    pritunl
     python3
     tmux
     wget
