@@ -60,9 +60,9 @@ git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
 git config --global pull.rebase true
 
-ln -sf "${ASSETS_PATH}/.gitignore" $HOME
-ln -sf "${ASSETS_PATH}/.zshrc" $HOME
-ln -sf "${ASSETS_PATH}/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
+ln -sf "${ASSETS_PATH}/git/.gitignore" $HOME
+ln -sf "${ASSETS_PATH}/zsh/.zshrc" $HOME
+ln -sf "${ASSETS_PATH}/alacritty/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
 
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment

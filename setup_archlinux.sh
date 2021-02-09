@@ -9,7 +9,7 @@ fi
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
 DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-ASSETS_PATH="${DOTFILES_PATH}/assets"
+DOTFILES_PATH="${DOTFILES_PATH}/dotfiles"
 
 # Install applications
 pacman -S --needed git base-devel
@@ -55,9 +55,9 @@ git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
 git config --global pull.rebase true
 
-ln -sf "${ASSETS_PATH}/.gitignore" $HOME
-ln -sf "${ASSETS_PATH}/.zshrc" $HOME
-ln -sf "${ASSETS_PATH}/.alacritty.yml" $HOME
+ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
+ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
+ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.yml" $HOME
 
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
