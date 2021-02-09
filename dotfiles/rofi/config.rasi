@@ -11,7 +11,7 @@ configuration {
 * {
 	bg: #161821;
 	fg: #d2d4de;
-	accent: #d2d4de;
+	accent: #89b8c2;
 	background-color: @bg;
 	text-color: @fg;
 }
@@ -19,7 +19,7 @@ configuration {
 window {
 	padding: 7px;
 	border: 1px;
-	border-color: @fg;
+	border-color: @accent;
 }
 
 prompt, entry {
@@ -32,6 +32,6 @@ element {
 }
 
 element selected {
-	background-color: @fg;
+	background-color: @accent;
 	text-color: @bg;
 }
