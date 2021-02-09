@@ -20,26 +20,22 @@ cd ..
 rm -rf yay
 
 PACKAGES=(
-    z
-    zsh
-    tmux
-    alacritty
-    rofi
-    firefox
-    webstorm
-    jdk8-openjdk
-    pavucontrol
-    pulseaudio
-    telegram-desktop
     1password
-    openssh
+    alacritty
+    discord
+    escrotum-git python-numpy
+    firefox
     htop
     man
+    openssh
+    pavucontrol-git
+    rofi
+    telegram-desktop
     thunar
-    discord
+    tmux
     ttf-apple-emoji
-    escrotum-git
-    python-numpy
+    z
+    zsh
 )
 
 yay
