@@ -9,7 +9,7 @@ fi
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
 DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-ASSETS_PATH="${DOTFILES_PATH}/assets"
+DOTFILES_PATH="${DOTFILES_PATH}/dotfiles"
 
 # Install applications
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -60,16 +60,16 @@ git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
 git config --global pull.rebase true
 
-ln -sf "${ASSETS_PATH}/git/.gitignore" $HOME
-ln -sf "${ASSETS_PATH}/zsh/.zshrc" $HOME
-ln -sf "${ASSETS_PATH}/alacritty/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
+ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
+ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
+ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
 
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
 
-osascript -e "tell application \"Finder\" to set desktop picture to \"${ASSETS_PATH}/background.png\" as POSIX file"
+osascript -e "tell application \"Finder\" to set desktop picture to \"${DOTFILES_PATH}/background.png\" as POSIX file"
 
 defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool false
 defaults write com.apple.finder ShowHardDrivesOnDesktop -bool false
