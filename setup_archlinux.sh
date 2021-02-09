@@ -53,6 +53,11 @@ git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
 git config --global pull.rebase true
 
+code --install-extension editorconfig.editorconfig
+code --install-extension k--kato.docomment
+code --install-extension shardulm94.trailing-spaces
+code --install-extension stkb.rewrap
+
 ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
 ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
 ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.yml" $HOME
@@ -65,17 +70,14 @@ ln -sf "${DOTFILES_PATH}/i3/config" "${CONFIG_PATH}/i3"
 mkdir "${CONFIG_PATH}/rofi"
 ln -sf "${DOTFILES_PATH}/rofi/config.rasi" "${CONFIG_PATH}/rofi"
 
-code --install-extension editorconfig.editorconfig
-code --install-extension k--kato.docomment
-code --install-extension shardulm94.trailing-spaces
-code --install-extension stkb.rewrap
-
 # WM installation and configuration
 yay -S lightdm-mini-greeter xorg-server xorg-xinit i3-gaps xorg-xsetroot
 
 sudo ln -sf "${DOTFILES_PATH}/X11/xinitrc" "/etc/X11/xinit/xinitrc"
 sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm.conf" "/etc/lightdm/lightdm.conf"
-sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
+# this cannot be a symlink currently, see: https://github.com/prikhi/lightdm-mini-greeter/pull/66
+# sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
+sudo cp "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
 
 sudo systemctl enable lightdm.service
 
