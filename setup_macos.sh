@@ -1,15 +1,15 @@
 #! /usr/bin/env zsh
 
-REPO_NAME=".files"
-CURRENT_PATH=$(pwd)
-DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-ASSETS_PATH="${DOTFILES_PATH}/assets"
-
 if [ "$(uname)" != "Darwin" ]
 then
     echo "Aborting. These dotfiles are meant to be running on macOS"
     exit 1
 fi
+
+REPO_NAME=".files"
+CURRENT_PATH=$(pwd)
+DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
+ASSETS_PATH="${DOTFILES_PATH}/assets"
 
 # Install applications
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

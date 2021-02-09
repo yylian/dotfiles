@@ -6,7 +6,13 @@ cross-platform.
 
 ## Setup
 
-Setup like this:
+Setup like this on macOS directly after finishing the installation:
 ```
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/yylian/dotfiles/master/setup.sh)"
+zsh -c "$(curl -fsSL https://raw.githubusercontent.com/yylian/dotfiles/master/setup_macos.sh)"
+```
+On archlinux you will need to have followed the the (installation
+instructions)[https://wiki.archlinux.org/index.php/installation_guide] and have
+a user with sudo permissions and curl:
+```
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/yylian/dotfiles/master/setup_archlinux.sh)"
 ```
