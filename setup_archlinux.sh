@@ -57,7 +57,7 @@ ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
 ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
 ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.yml" $HOME
 
-CONFIG_PATH="~/.config"
+CONFIG_PATH="$HOME/.config"
 mkdir $CONFIG_PATH
 
 mkdir "${CONFIG_PATH}/i3"
