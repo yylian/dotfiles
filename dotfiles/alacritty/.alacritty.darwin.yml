@@ -1,11 +1,12 @@
 import:
-  - ~/.files/assets/.alacritty.yml
+  - ~/.files/dotfiles/alacritty/.alacritty.yml
 
 window:
   decorations: buttonless
 
 key_bindings:
   - { key: T,       mods: Command, action: SpawnNewInstance }
+  - { key: Return,  mods: Command, action: ToggleSimpleFullscreen }
   - { key: 28,      mods: Alt, chars: "{" }
   - { key: 25,      mods: Alt, chars: "}" }
   - { key: 37,      mods: Alt, chars: "@" }
