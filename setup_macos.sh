@@ -12,7 +12,10 @@ DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
 DOTFILES_PATH="${DOTFILES_PATH}/dotfiles"
 
 # Install applications
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+if [ ! -f "$(which brew)" ]
+then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
 
 CLI_BREWS=(
     findomain

@@ -12,12 +12,15 @@ DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
 DOTFILES_PATH="${DOTFILES_PATH}/dotfiles"
 
 # Install applications
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-cd ..
-rm -rf yay
+if [ ! -f "$(which yay)" ]
+then
+    pacman -S --needed git base-devel
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si
+    cd ..
+    rm -rf yay
+fi
 
 PACKAGES=(
     1password
