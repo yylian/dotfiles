@@ -3,9 +3,9 @@ Description=OpenRGB control
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/openrgb --profile /etc/openrgb/pinkplue.orp
-User=nobody
-Group=i2c
+ExecStart=/usr/bin/openrgb --profile pinkblue.orp
+User=root
+Group=root
 
 [Install]
 WantedBy=multi-user.target

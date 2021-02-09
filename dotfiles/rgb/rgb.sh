@@ -1,7 +1,7 @@
 BASE_PATH="$(pwd)/$(dirname "$0")"
 
-sudo mkdir "/etc/openrgb"
+sudo mkdir -p "/root/.config/OpenRGB"
 sudo cp "${BASE_PATH}/rgb.service" "/etc/systemd/system"
-sudo cp "${BASE_PATH}/pinkblue.orp" "/etc/openrgb"
+sudo ln -sf "${BASE_PATH}/pinkblue.orp" "/root/.config/OpenRGB"
 
 sudo systemctl enable rgb.service
