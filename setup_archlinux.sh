@@ -25,7 +25,6 @@ PACKAGES=(
     tmux
     alacritty
     rofi
-    steam
     firefox
     webstorm
     jdk8-openjdk
@@ -47,9 +46,8 @@ yay
 yay -S $PACKAGES
 
 # Setup
-mkdir ~/dev
-mkdir ~/.ssh
-mkdir ~/.config
+mkdir "~/dev"
+mkdir "~/.ssh"
 
 git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
@@ -59,7 +57,29 @@ ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
 ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
 ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.yml" $HOME
 
+CONFIG_PATH="~/.config"
+mkdir $CONFIG_PATH
+
+mkdir "${CONFIG_PATH}/i3"
+ln -sf "${DOTFILES_PATH}/i3/config" "${CONFIG_PATH}/i3"
+mkdir "${CONFIG_PATH}/rofi"
+ln -sf "${DOTFILES_PATH}/rofi/config.rasi" "${CONFIG_PATH}/rofi"
+
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
+
+# WM installation and configuration
+yay -S lightdm-mini-greeter xorg-server xorg-xinit i3-gaps xorg-xsetroot
+
+sudo ln -sf "${DOTFILES_PATH}/X11/xinitrc" "/etc/X11/xinit/xinitrc"
+sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm.conf" "/etc/lightdm/lightdm.conf"
+sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
+
+sudo systemctl enable lightdm.service
+
+# Finish
+echo "You may stillt want to configure the following things:"
+echo "  - Enable color output in /etc/pacman.conf"
+echo "Reboot."

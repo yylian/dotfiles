@@ -53,8 +53,8 @@ mas install 1295203466
 mas install 990588172
 
 # Setup
-mkdir ~/dev
-mkdir ~/.ssh
+mkdir "~/dev"
+mkdir "~/.ssh"
 
 git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
