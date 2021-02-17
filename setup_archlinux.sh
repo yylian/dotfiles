@@ -74,9 +74,7 @@ yay -S lightdm-mini-greeter xorg-server xorg-xinit i3-gaps xorg-xsetroot
 
 sudo ln -sf "${DOTFILES_PATH}/X11/xinitrc" "/etc/X11/xinit/xinitrc"
 sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm.conf" "/etc/lightdm/lightdm.conf"
-# this cannot be a symlink currently, see: https://github.com/prikhi/lightdm-mini-greeter/pull/66
-# sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
-sudo cp "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
+sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
 
 sudo systemctl enable lightdm.service
 
