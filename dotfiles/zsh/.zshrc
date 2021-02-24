@@ -56,7 +56,7 @@ alias gst="git status"
 alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias gud="git pull --all && git fetch --prune"
-alias gbd="git branch --merged | egrep -v '(^\*|master|dev)' | xargs git branch -d"
+alias gbd="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git branch -d"
 
 # Application sourcing
 [[ -r "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
