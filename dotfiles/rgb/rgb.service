@@ -3,7 +3,7 @@ Description=OpenRGB control
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/openrgb --profile pinkblue.orp
+ExecStart=/usr/bin/openrgb --profile pinkblue
 User=root
 Group=root
 
