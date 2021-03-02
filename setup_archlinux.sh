@@ -23,8 +23,8 @@ then
 fi
 
 PACKAGES=(
-    1password
     alacritty
+    bitwarden
     discord
     escrotum-git python-numpy
     firefox
