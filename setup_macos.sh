@@ -80,6 +80,7 @@ defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool false
 defaults write com.apple.finder ShowMountedServersOnDesktop -bool false
 
 defaults write com.apple.dock static-only -bool TRUE
+defaults write com.apple.dock no-bouncing -bool TRUE
 defaults write com.apple.dock orientation left
 osascript -e 'tell application "System Events" to set autohide of dock preferences to not (autohide of dock preferences)'
 
