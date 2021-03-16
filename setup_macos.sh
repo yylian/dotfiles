@@ -62,6 +62,7 @@ mkdir "~/.ssh"
 git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
 git config --global pull.rebase true
+git config --global init.defaultBranch main
 
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment

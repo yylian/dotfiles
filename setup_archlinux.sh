@@ -50,6 +50,7 @@ mkdir "~/.ssh"
 
 git clone git://github.com/yylian/dotfiles.git $REPO_NAME
 git config --global core.excludesfile '~/.gitignore'
+git config --global init.defaultBranch main
 git config --global pull.rebase true
 
 code --install-extension editorconfig.editorconfig
