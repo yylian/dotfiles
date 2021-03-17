@@ -25,6 +25,7 @@ fi
 PACKAGES=(
     alacritty
     bitwarden
+    coreutils
     discord
     escrotum-git python-numpy
     firefox
