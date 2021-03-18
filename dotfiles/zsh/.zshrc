@@ -66,3 +66,4 @@ alias gbd="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git br
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+[[ -r " /usr/share/nvm/init-nvm.sh" ]] && source /usr/share/nvm/init-nvm.sh
