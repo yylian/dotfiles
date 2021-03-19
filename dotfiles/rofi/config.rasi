@@ -9,9 +9,9 @@ configuration {
 }
 
 * {
-	bg: #161821;
-	fg: #d2d4de;
-	accent: #89b8c2;
+	bg: #0f111b;
+	accent: #ecf0c1;
+	fg: #818596;
 	background-color: @bg;
 	text-color: @fg;
 }
@@ -23,7 +23,7 @@ window {
 }
 
 prompt, entry {
-	text-color: @fg;
+	text-color: @accent;
 }
 
 element {
