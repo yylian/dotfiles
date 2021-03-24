@@ -60,10 +60,16 @@ alias gud="git pull --all && git fetch --prune"
 alias gbd="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git branch -d"
 
 # Application sourcing
+
+# z
 [[ -r "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
+# nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-[[ -r " /usr/share/nvm/init-nvm.sh" ]] && source /usr/share/nvm/init-nvm.sh
+[[ -r "/usr/share/nvm/init-nvm.sh" ]] && source /usr/share/nvm/init-nvm.sh
+
+# kubetl
+[[ -r "/usr/local/bin/kubectl" ]] && source <(kubectl completion zsh)
