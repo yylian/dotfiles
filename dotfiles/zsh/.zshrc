@@ -71,5 +71,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
 [[ -r "/usr/share/nvm/init-nvm.sh" ]] && source /usr/share/nvm/init-nvm.sh
 
-# kubetl
-[[ -r "/usr/local/bin/kubectl" ]] && source <(kubectl completion zsh)
+# kubectl
+function kubectl() {
+    if ! type __start_kubectl >/dev/null 2>&1; then
+        source <(command kubectl completion zsh)
+    fi
+
+    command kubectl "$@"
+}
