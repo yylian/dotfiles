@@ -31,6 +31,8 @@ PACKAGES=(
     firefox
     htop
     man
+    neovim
+    nerd-fonts
     openssh
     pavucontrol-git
     rofi
@@ -66,6 +68,9 @@ ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.yml" $HOME
 
 CONFIG_PATH="$HOME/.config"
 mkdir $CONFIG_PATH
+
+mkdir "${CONFIG_PATH}/nvim"
+ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"
 
 mkdir "${CONFIG_PATH}/i3"
 ln -sf "${DOTFILES_PATH}/i3/config" "${CONFIG_PATH}/i3"

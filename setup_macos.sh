@@ -19,6 +19,7 @@ fi
 
 CLI_BREWS=(
     findomain
+    font-hasklug-nerd-font
     git
     htop
     mas
@@ -47,6 +48,7 @@ APP_BREWS=(
     vmware-fusion
 )
 
+brew tap homebrew/cask-fonts
 brew install $CLI_BREWS
 brew install --cask $APP_BREWS
 
@@ -69,6 +71,12 @@ code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
+
+CONFIG_PATH="$HOME/.config"
+mkdir $CONFIG_PATH
+
+mkdir "${CONFIG_PATH}/nvim"
+ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"
 
 ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
 ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
