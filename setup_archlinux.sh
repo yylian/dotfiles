@@ -32,7 +32,7 @@ PACKAGES=(
     htop
     man
     neovim
-    nerd-fonts
+    nerd-fonts-complete
     openssh
     pavucontrol-git
     rofi
@@ -40,6 +40,7 @@ PACKAGES=(
     thunar
     tmux
     ttf-apple-emoji
+    vim-plug
     z
     zsh
 )
