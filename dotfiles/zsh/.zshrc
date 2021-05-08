@@ -52,6 +52,8 @@ alias l="ls -lahF"
 alias reload="source ~/.zshrc"
 alias findBigFiles='du -hs $(ls)'
 
+alias ssh='TERM=xterm-256color ssh'
+
 alias glg="git log --oneline --decorate --graph --all"
 alias gst="git status"
 alias gco="git checkout"
