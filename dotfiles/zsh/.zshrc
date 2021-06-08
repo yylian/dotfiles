@@ -30,7 +30,7 @@ setopt PROMPT_SUBST
 PROMPT='$(CLEAN_PROMPT)'
 
 function CLEAN_PROMPT() {
-  echo "%F{cyan}%c%f$(GIT_PROMPT)$(k8s_cluster_info)%f "
+  echo "%F{cyan}%c%f$(GIT_PROMPT)$(K8S_CLUSTER_INFO)%f "
 }
 
 function GIT_PROMPT() {
@@ -45,7 +45,7 @@ function GIT_PROMPT() {
   echo ".${STATUS_COLOR}${REFERENCE}%f"
 }
 
-function k8s_cluster_info() {
+function K8S_CLUSTER_INFO() {
   K8S_ENV=$(kubectx --current 2> /dev/null)
 
   if [[ -z $K8S_ENV ]]; then
