@@ -41,6 +41,7 @@ PACKAGES=(
     tmux
     ttf-apple-emoji
     vim-plug
+    visual-studio-code-bin
     z
     zsh
 )

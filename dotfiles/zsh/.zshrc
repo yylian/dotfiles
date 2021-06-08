@@ -30,7 +30,7 @@ setopt PROMPT_SUBST
 PROMPT='$(CLEAN_PROMPT)'
 
 function CLEAN_PROMPT() {
-  echo "%F{cyan}%c%f$(GIT_PROMPT)%f "
+  echo "%F{cyan}%c%f$(GIT_PROMPT)$(k8s_cluster_info)%f "
 }
 
 function GIT_PROMPT() {
@@ -42,7 +42,39 @@ function GIT_PROMPT() {
   REFERENCE=$(QUIET_GIT symbolic-ref --short -q HEAD || QUIET_GIT rev-parse --short HEAD ) || return 0
   [[ -n $(QUIET_GIT status --porcelain | tail -n1) ]] && STATUS_COLOR="%F{yellow}" || STATUS_COLOR="%F{green}"
 
-  echo ".${STATUS_COLOR}${REFERENCE}"
+  echo ".${STATUS_COLOR}${REFERENCE}%f"
+}
+
+function k8s_cluster_info() {
+  K8S_ENV=$(kubectx --current 2> /dev/null)
+
+  if [[ -z $K8S_ENV ]]; then
+    return 0
+  fi
+  local STATUS_COLOR
+
+  case $K8S_ENV in
+    *production*)
+      STATUS_COLOR="%F{red}"
+      ;;
+
+    *staging*)
+      STATUS_COLOR="%F{yellow}"
+      ;;
+
+    *demo*)
+      STATUS_COLOR="%F{blue}"
+      ;;
+
+    *development*)
+      STATUS_COLOR="%F{green}"
+      ;;
+
+    *)
+      STATUS_COLOR="%F{white}"
+      ;;
+  esac
+  echo ":$STATUS_COLOR$K8S_ENV%f"
 }
 
 # Aliases definitions
