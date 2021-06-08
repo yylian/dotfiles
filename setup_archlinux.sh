@@ -30,6 +30,7 @@ PACKAGES=(
     escrotum-git python-numpy
     firefox
     htop
+    kubectx
     man
     neovim
     nerd-fonts-complete
