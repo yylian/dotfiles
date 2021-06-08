@@ -25,6 +25,8 @@ CLI_BREWS=(
     font-hasklug-nerd-font
     git
     htop
+    kubectx
+    kubernetes-cli
     mas
     neovim
     nvm
