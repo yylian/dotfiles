@@ -113,3 +113,6 @@ function kubectl() {
 
     command kubectl "$@"
 }
+
+#mclist
+mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0"}

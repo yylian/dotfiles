@@ -24,7 +24,7 @@ fi
 
 PACKAGES=(
     alacritty
-    bitwarden
+    bitwarden-git
     coreutils
     discord
     escrotum-git python-numpy
