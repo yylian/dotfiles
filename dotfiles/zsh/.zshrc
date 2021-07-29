@@ -91,7 +91,7 @@ alias gst="git status"
 alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias gpf="git pull --all && git fetch --prune"
-alias gcb="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git branch -d"
+alias gdb="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git branch -d"
 
 # Application sourcing
 
