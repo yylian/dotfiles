@@ -106,13 +106,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -r "/usr/share/nvm/init-nvm.sh" ]] && source /usr/share/nvm/init-nvm.sh
 
 # kubectl
-function kubectl() {
-    if ! type __start_kubectl >/dev/null 2>&1; then
-        source <(command kubectl completion zsh)
-    fi
-
-    command kubectl "$@"
-}
+source <(kubectl completion zsh)
 
 #mclist
 mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0"}
