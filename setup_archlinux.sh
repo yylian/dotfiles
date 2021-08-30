@@ -25,8 +25,9 @@ fi
 PACKAGES=(
     alacritty
     bitwarden-git
-    coreutils
+    cowsay
     discord
+    dolphin
     escrotum-git python-numpy
     firefox
     htop
@@ -35,15 +36,17 @@ PACKAGES=(
     neovim
     nerd-fonts-complete
     openssh
-    pavucontrol-git
+    reflector
+    rsync
     rofi
     telegram-desktop
-    thunar
-    tmux
     ttf-apple-emoji
     vim-plug
     visual-studio-code-bin
+    wget
+    whois
     z
+    zip
     zsh
 )
 
@@ -91,5 +94,5 @@ sudo systemctl enable lightdm.service
 
 # Finish
 echo "You may stillt want to configure the following things:"
-echo "  - Enable color output in /etc/pacman.conf"
+echo "  - Enable color and ILoveCandy output in /etc/pacman.conf"
 echo "Reboot."
