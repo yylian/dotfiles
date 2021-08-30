@@ -82,6 +82,7 @@ mkdir "${CONFIG_PATH}/i3"
 ln -sf "${DOTFILES_PATH}/i3/config" "${CONFIG_PATH}/i3"
 mkdir "${CONFIG_PATH}/rofi"
 ln -sf "${DOTFILES_PATH}/rofi/config.rasi" "${CONFIG_PATH}/rofi"
+ln -sf "${DOTFILES_PATH}/rofi/lila.rasi" "${CONFIG_PATH}/rofi"
 
 # WM installation and configuration
 yay -S lightdm-mini-greeter xorg-server xorg-xinit i3-gaps xorg-xsetroot
