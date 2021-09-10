@@ -86,6 +86,8 @@ alias findBigFiles='du -hs $(ls)'
 
 alias ssh='TERM=xterm-256color ssh'
 
+alias kubeclear='kubectx -u'
+
 alias glg="git log --oneline --decorate --graph --all"
 alias gst="git status"
 alias gco="git checkout"
@@ -109,4 +111,4 @@ export NVM_DIR="$HOME/.nvm"
 source <(kubectl completion zsh)
 
 # mclist
-mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0"}
+mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0" }
