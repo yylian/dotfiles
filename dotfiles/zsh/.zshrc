@@ -86,8 +86,6 @@ alias findBigFiles='du -hs $(ls)'
 
 alias ssh='TERM=xterm-256color ssh'
 
-alias docker='podman'
-
 alias kubeclear='kubectx -u'
 alias k='kubectl'
 alias kctx='kubectx'
@@ -106,11 +104,8 @@ alias gdb="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git br
 [[ -r "/usr/local/etc/profile.d/z.sh" ]] && . /usr/local/etc/profile.d/z.sh
 [[ -r "/usr/share/z/z.sh" ]] && source /usr/share/z/z.sh
 
-# nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-[[ -r "/usr/share/nvm/init-nvm.sh" ]] && source /usr/share/nvm/init-nvm.sh
+# fnm
+eval "$(fnm env)"
 
 # kubectl
 source <(kubectl completion zsh)

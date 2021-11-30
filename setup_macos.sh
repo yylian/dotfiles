@@ -29,7 +29,7 @@ CLI_BREWS=(
     kubernetes-cli
     mas
     neovim
-    nvm
+    fnm
     pritunl
     python3
     tmux
