@@ -155,6 +155,6 @@ for_window [class=".*"] border pixel 0
 
 gaps inner 40
 
-border_radius 5
+# border_radius 5
 # disable screensaver
 exec --no-startup-id xset -dpms s off

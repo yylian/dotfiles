@@ -25,7 +25,6 @@ fi
 PACKAGES=(
     alacritty
     bitwarden-git
-    cowsay
     discord
     dolphin
     escrotum-git python-numpy
@@ -33,6 +32,7 @@ PACKAGES=(
     htop
     kubectx
     man
+    ncdu
     neovim
     nerd-fonts-complete
     openssh
