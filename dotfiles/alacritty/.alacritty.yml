@@ -18,11 +18,11 @@ colors:
     foreground: '#ecf0c1'
 
   normal:
-    black:   '#000000'
-    red:     '#e33400'
-    green:   '#5ccc96'
-    yellow:  '#f2ce00'
-    blue:    '#00a3cc'
+    black: '#000000'
+    red: '#e33400'
+    green: '#5ccc96'
+    yellow: '#f2ce00'
+    blue: '#00a3cc'
     magenta: '#b3a1e6'
-    cyan:    '#7a5ccc'
-    white:   '#686f9a'
+    cyan: '#7a5ccc'
+    white: '#686f9a'

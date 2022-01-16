@@ -84,6 +84,9 @@ mkdir "${CONFIG_PATH}/rofi"
 ln -sf "${DOTFILES_PATH}/rofi/config.rasi" "${CONFIG_PATH}/rofi"
 ln -sf "${DOTFILES_PATH}/rofi/lila.rasi" "${CONFIG_PATH}/rofi"
 
+mkdir "${CONFIG_PATH}/kitty"
+ln -sf "${DOTFILES_PATH}/kitty/kitty.conf" "${CONFIG_PATH}/kitty"
+
 # WM installation and configuration
 yay -S lightdm-mini-greeter xorg-server xorg-xinit i3-gaps xorg-xsetroot
 

@@ -8,12 +8,12 @@ font:
   size: 12
 
 key_bindings:
-  - { key: T,       mods: Command, action: SpawnNewInstance }
-  - { key: Return,  mods: Command, action: ToggleSimpleFullscreen }
-  - { key: 28,      mods: Alt, chars: "{" }
-  - { key: 25,      mods: Alt, chars: "}" }
-  - { key: 37,      mods: Alt, chars: "@" }
-  - { key: 26,      mods: Alt|Shift, chars: "\\" }
-  - { key: 26,      mods: Alt, chars: "|" }
-  - { key: 23,      mods: Alt, chars: "[" }
-  - { key: 22,      mods: Alt, chars: "]" }
+  - { key: T, mods: Command, action: SpawnNewInstance }
+  - { key: Return, mods: Command, action: ToggleSimpleFullscreen }
+  - { key: 28, mods: Alt, chars: '{' }
+  - { key: 25, mods: Alt, chars: '}' }
+  - { key: 37, mods: Alt, chars: '@' }
+  - { key: 26, mods: Alt|Shift, chars: "\\" }
+  - { key: 26, mods: Alt, chars: '|' }
+  - { key: 23, mods: Alt, chars: '[' }
+  - { key: 22, mods: Alt, chars: ']' }

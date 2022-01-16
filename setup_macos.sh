@@ -83,6 +83,9 @@ mkdir $CONFIG_PATH
 mkdir "${CONFIG_PATH}/nvim"
 ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"
 
+mkdir "${CONFIG_PATH}/kitty"
+ln -sf "${DOTFILES_PATH}/kitty/kitty.conf" "${CONFIG_PATH}/kitty"
+
 ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
 ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
 ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
