@@ -1,5 +1,6 @@
 # Inserts a blank line between shell prompts
 add_newline = false
+scan_timeout = 10
 
 format = "$directory(.$git_status$git_branch)$kubernetes "
 
@@ -14,18 +15,17 @@ format = "$branch%F{reset_color}"
 
 [git_status]
 format = "$all_status"
-style = ""
 conflicted = "%F{yellow}"
 ahead = "%F{yellow}"
-behind = "%F{white}"
+behind = "%F{green}"
 diverged = "%F{yellow}"
+up_to_date = "%F{green}"
 untracked = "%F{yellow}"
 stashed = ""
 modified = "%F{yellow}"
 staged = "%F{yellow}"
 renamed = "%F{yellow}"
 deleted = "%F{yellow}"
-up_to_date = "%F{green}"
 
 [kubernetes]
 symbol = ":"
