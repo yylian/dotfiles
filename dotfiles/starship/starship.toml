@@ -11,10 +11,10 @@ truncation_length = 1
 truncation_symbol = ""
 
 [git_branch]
-format = "$ahead_behind$branch%F{reset_color}"
+format = "$branch%F{reset_color}"
 
 [git_status]
-format = "$all_status"
+format = "$ahead_behind$all_status"
 conflicted = "%F{yellow}"
 ahead = "%F{yellow}"
 behind = "%F{white}"
