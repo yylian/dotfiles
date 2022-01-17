@@ -1,0 +1,34 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+format = "$directory(.$git_status$git_branch)$kubernetes "
+
+[directory]
+format = "[$path]($style)"
+style = "cyan"
+truncation_length = 1
+truncation_symbol = ""
+
+[git_branch]
+format = "$branch%F{reset_color}"
+
+[git_status]
+format = "$all_status"
+style = ""
+conflicted = "%F{yellow}"
+ahead = "%F{yellow}"
+behind = "%F{white}"
+diverged = "%F{yellow}"
+untracked = "%F{yellow}"
+stashed = ""
+modified = "%F{yellow}"
+staged = "%F{yellow}"
+renamed = "%F{yellow}"
+deleted = "%F{yellow}"
+up_to_date = "%F{green}"
+
+[kubernetes]
+symbol = ":"
+format = '[[$symbol](fg)$context([@](fg)$namespace)]($style)'
+style = 'white'
+disabled = false

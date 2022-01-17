@@ -11,7 +11,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 
-
 # History file configuration
 [[ -z "$HISTFILE" ]] && HISTFILE="$HOME/.zsh_history"
 [[ "$HISTSIZE" -lt 50000 ]] && HISTSIZE=50000
@@ -24,58 +23,6 @@ zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 bindkey "^[[A" up-line-or-beginning-search
 bindkey "^[[B" down-line-or-beginning-search
-
-# Prompt parsing
-setopt PROMPT_SUBST
-PROMPT='$(CLEAN_PROMPT)'
-
-function CLEAN_PROMPT() {
-  echo "%F{cyan}%c%f$(GIT_PROMPT)$(K8S_CLUSTER_INFO)%f "
-}
-
-function GIT_PROMPT() {
-
-  function QUIET_GIT() {
-    GIT_OPTIONAL_LOCKS=0 command git "$@" 2>/dev/null
-  }
-
-  REFERENCE=$(QUIET_GIT symbolic-ref --short -q HEAD || QUIET_GIT rev-parse --short HEAD ) || return 0
-  [[ -n $(QUIET_GIT status --porcelain | tail -n1) ]] && STATUS_COLOR="%F{yellow}" || STATUS_COLOR="%F{green}"
-
-  echo ".${STATUS_COLOR}${REFERENCE}%f"
-}
-
-function K8S_CLUSTER_INFO() {
-  K8S_ENV=$(kubectx --current 2> /dev/null)
-
-  if [[ -z $K8S_ENV ]]; then
-    return 0
-  fi
-  local STATUS_COLOR
-
-  case $K8S_ENV in
-    *production*)
-      STATUS_COLOR="%F{red}"
-      ;;
-
-    *staging*)
-      STATUS_COLOR="%F{yellow}"
-      ;;
-
-    *demo*)
-      STATUS_COLOR="%F{blue}"
-      ;;
-
-    *development*)
-      STATUS_COLOR="%F{green}"
-      ;;
-
-    *)
-      STATUS_COLOR="%F{white}"
-      ;;
-  esac
-  echo ":$STATUS_COLOR$K8S_ENV%f"
-}
 
 # Aliases definitions
 [[ "$(uname)" == "Darwin"  ]] && LS_OPTION="-G" || LS_OPTION="--color=auto"
@@ -112,3 +59,5 @@ source <(kubectl completion zsh)
 
 # mclist
 mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0" }
+
+eval "$(starship init zsh)"
