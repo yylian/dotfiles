@@ -46,3 +46,19 @@ let g:lualine = {
       \}
 
   lua require("lualine").setup()
+
+" Textwrapping in md and tex files
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.tex setlocal textwidth=80
+
+" NERDTREE
+
+" Start NERDTree. If a file is specified, move the cursor to its window.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+let NERDTreeShowHidden=1
+
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
