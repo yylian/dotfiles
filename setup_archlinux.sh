@@ -8,33 +8,33 @@ fi
 
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
-DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-DOTFILES_PATH="${DOTFILES_PATH}/dotfiles"
+REPO_PATH="${CURRENT_PATH}/dev/${REPO_NAME}"
+DOTFILES_PATH="${REPO_PATH}/dotfiles"
 
 # Install applications
 if [ ! -f "$(which yay)" ]
 then
     pacman -S --needed git base-devel
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
+    git clone https://aur.archlinux.org/yay-bin.git
+    cd yay-bin
     makepkg -si
     cd ..
-    rm -rf yay
+    rm -rf yay-bin
 fi
 
 PACKAGES=(
-    alacritty
-    bitwarden-git
+    bitwarden
     discord
     dolphin
-    escrotum-git python-numpy
+    grim slurp wl-clipboard
     firefox
     htop
+    kitty
     kubectx
     man
     ncdu
     neovim
-    nerd-fonts-complete
+    nerd-fonts-hasklig
     openssh
     reflector
     rsync
@@ -53,12 +53,19 @@ PACKAGES=(
 yay
 yay -S $PACKAGES
 
+git clone git://github.com/yylian/dotfiles.git $REPO_PATH
+
 # Setup
 mkdir "~/dev"
 mkdir "~/.ssh"
 
-git clone git://github.com/yylian/dotfiles.git $REPO_NAME
-git config --global core.excludesfile '~/.gitignore'
+CONFIG_PATH="$HOME/.config"
+mkdir $CONFIG_PATH
+
+mkdir "${CONFIG_PATH}/git"
+ln -sf "${DOTFILES_PATH}/git/.gitignore" "${CONFIG_PATH}/git/ignore"
+
+git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
 git config --global pull.rebase true
 git config --global advice.statusHints false
@@ -68,12 +75,7 @@ code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
 
-ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
 ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
-ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.yml" $HOME
-
-CONFIG_PATH="$HOME/.config"
-mkdir $CONFIG_PATH
 
 mkdir "${CONFIG_PATH}/nvim"
 ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"
@@ -87,16 +89,7 @@ ln -sf "${DOTFILES_PATH}/rofi/lila.rasi" "${CONFIG_PATH}/rofi"
 mkdir "${CONFIG_PATH}/kitty"
 ln -sf "${DOTFILES_PATH}/kitty/kitty.conf" "${CONFIG_PATH}/kitty"
 
-# WM installation and configuration
-yay -S lightdm-mini-greeter xorg-server xorg-xinit i3-gaps xorg-xsetroot
-
-sudo ln -sf "${DOTFILES_PATH}/X11/xinitrc" "/etc/X11/xinit/xinitrc"
-sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm.conf" "/etc/lightdm/lightdm.conf"
-sudo ln -sf "${DOTFILES_PATH}/lightdm/lightdm-mini-greeter.conf" "/etc/lightdm/lightdm-mini-greeter.conf"
-
-sudo systemctl enable lightdm.service
-
 # Finish
-echo "You may stillt want to configure the following things:"
+echo "You may still want to configure the following things:"
 echo "  - Enable color and ILoveCandy output in /etc/pacman.conf"
 echo "Reboot."

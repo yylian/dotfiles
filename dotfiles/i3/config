@@ -3,7 +3,8 @@
 set $mod Mod4
 
 # Set bacground color
-exec --no-startup-id xsetroot -solid "#16172d"
+# exec --no-startup-id xsetroot -solid "#16172d"
+output * bg #16172d solid_color
 exec --no-startup-id xset r rate 225 30
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -147,11 +148,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym $mod+s exec --no-startup-id escrotum --clipboard --select
+bindsym $mod+s exec grim -g "$(slurp -d)" - | wl-copy
 
 focus_follows_mouse no
+default_border none
 
-for_window [class=".*"] border pixel 0
+for_window [class="^.*"] border pixel 0
 
 gaps inner 40
 
