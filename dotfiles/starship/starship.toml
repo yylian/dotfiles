@@ -11,21 +11,12 @@ truncation_length = 1
 truncation_symbol = ""
 
 [git_branch]
-format = "$branch%F{reset_color}"
+format = "[$branch]($style)"
+style = "blue"
 
 [git_status]
-format = "$ahead_behind$all_status"
-conflicted = "%F{yellow}"
-ahead = "%F{yellow}"
-behind = "%F{white}"
-diverged = "%F{yellow}"
-up_to_date = "%F{green}"
-untracked = "%F{yellow}"
-stashed = ""
-modified = "%F{yellow}"
-staged = "%F{yellow}"
-renamed = "%F{yellow}"
-deleted = "%F{yellow}"
+format = '([\[[$all_status](pink)\]](white))'
+style = ""
 
 [kubernetes]
 symbol = ":"

@@ -61,3 +61,9 @@ source <(kubectl completion zsh)
 mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0" }
 
 eval "$(starship init zsh)"
+
+alias docker=podman
+export DOCKER_HOST='unix:///Users/yylian/.local/share/containers/podman/machine/podman-machine-default/podman.sock'
+
+# start stopped docker container with sh
+# docker run -it --entrypoint /bin/sh dmn
