@@ -8,8 +8,8 @@ fi
 
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
-REPO_PATH="${CURRENT_PATH}/dev/${REPO_NAME}"
-DOTFILES_PATH="${REPO_PATH}/dotfiles"
+REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
+DOTFILES_PATH="$REPO_PATH/dotfiles"
 
 # Install applications
 if [ ! -f "$(which yay)" ]
@@ -26,6 +26,7 @@ PACKAGES=(
     bitwarden
     discord
     dolphin
+    fish
     grim slurp wl-clipboard
     firefox
     htop
@@ -45,9 +46,8 @@ PACKAGES=(
     visual-studio-code-bin
     wget
     whois
-    z
+    zoxide
     zip
-    zsh
 )
 
 yay
@@ -75,19 +75,19 @@ code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
 
-ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
+ln -sf "$DOTFILES_PATH/fish/config.fish" "$CONFIG_PATH/fish"
 
-mkdir "${CONFIG_PATH}/nvim"
-ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"
+mkdir "$CONFIG_PATH/nvim"
+ln -sf "$DOTFILES_PATH/nvim/init.vim" "$CONFIG_PATH/nvim"
 
-mkdir "${CONFIG_PATH}/i3"
-ln -sf "${DOTFILES_PATH}/i3/config" "${CONFIG_PATH}/i3"
-mkdir "${CONFIG_PATH}/rofi"
-ln -sf "${DOTFILES_PATH}/rofi/config.rasi" "${CONFIG_PATH}/rofi"
-ln -sf "${DOTFILES_PATH}/rofi/lila.rasi" "${CONFIG_PATH}/rofi"
+mkdir "$CONFIG_PATH/i3"
+ln -sf "$DOTFILES_PATH/i3/config" "$CONFIG_PATH/i3"
+mkdir "$CONFIG_PATH/rofi"
+ln -sf "$DOTFILES_PATH/rofi/config.rasi" "$CONFIG_PATH/rofi"
+ln -sf "$DOTFILES_PATH/rofi/lila.rasi" "$CONFIG_PATH/rofi"
 
-mkdir "${CONFIG_PATH}/kitty"
-ln -sf "${DOTFILES_PATH}/kitty/kitty.conf" "${CONFIG_PATH}/kitty"
+mkdir "$CONFIG_PATH/kitty"
+ln -sf "$DOTFILES_PATH/kitty/kitty.conf" "$CONFIG_PATH/kitty"
 
 # Finish
 echo "You may still want to configure the following things:"
