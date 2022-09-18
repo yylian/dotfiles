@@ -40,8 +40,9 @@ pyenv virtualenv-init - | source
 function mclist_ip; echo "2a01:04f8:0252:1ce6::$argv:0"; end
 
 # Container
-# alias docker=podman
-# export DOCKER_HOST='unix:///Users/yylian/.local/share/containers/podman/machine/podman-machine-default/podman.sock'
+#alias docker=podman
+#export DOCKER_HOST='unix:///Users/yylian/.local/share/containers/podman/machine/podman-machine-default/podman.sock'
+
 # start stopped docker container with sh
 # docker run -it --entrypoint /bin/sh dmn
 
