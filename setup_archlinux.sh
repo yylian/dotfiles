@@ -80,12 +80,6 @@ ln -sf "$DOTFILES_PATH/fish/config.fish" "$CONFIG_PATH/fish"
 mkdir "$CONFIG_PATH/nvim"
 ln -sf "$DOTFILES_PATH/nvim/init.vim" "$CONFIG_PATH/nvim"
 
-mkdir "$CONFIG_PATH/i3"
-ln -sf "$DOTFILES_PATH/i3/config" "$CONFIG_PATH/i3"
-mkdir "$CONFIG_PATH/rofi"
-ln -sf "$DOTFILES_PATH/rofi/config.rasi" "$CONFIG_PATH/rofi"
-ln -sf "$DOTFILES_PATH/rofi/lila.rasi" "$CONFIG_PATH/rofi"
-
 mkdir "$CONFIG_PATH/kitty"
 ln -sf "$DOTFILES_PATH/kitty/kitty.conf" "$CONFIG_PATH/kitty"
 
