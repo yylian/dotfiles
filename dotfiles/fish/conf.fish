@@ -7,7 +7,7 @@ alias l="ls -lahF"
 alias reload="source ~/.config/fish/config.fish"
 alias findBigFiles='du -hs $(ls)'
 
-alias ssh='TERM=xterm-256color ssh'
+alias ssh='TERM=xterm-256color command ssh'
 
 alias kubeclear='kubectx -u'
 alias k='kubectl'
