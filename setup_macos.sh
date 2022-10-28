@@ -6,10 +6,13 @@ then
     exit 1
 fi
 
+
+mkdir "~/dev"
+
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
-DOTFILES_PATH="${CURRENT_PATH}/${REPO_NAME}"
-DOTFILES_PATH="${DOTFILES_PATH}/dotfiles"
+REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
+DOTFILES_PATH="$REPO_PATH/dotfiles"
 
 # Install applications
 if [ ! -f "$(which brew)" ]
@@ -58,22 +61,25 @@ brew install --cask $APP_BREWS
 mas install 1295203466
 
 # Setup
-mkdir "~/dev"
 mkdir "~/.ssh"
 
 git clone git://github.com/yylian/dotfiles.git $REPO_NAME
-git config --global core.excludesfile '~/.gitignore'
-git config --global pull.rebase true
+
+CONFIG_PATH="$HOME/.config"
+mkdir $CONFIG_PATH
+
+mkdir "${CONFIG_PATH}/git"
+ln -sf "${DOTFILES_PATH}/git/.gitignore" "${CONFIG_PATH}/git/ignore"
+
+git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
+git config --global pull.rebase true
 git config --global advice.statusHints false
 
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
 code --install-extension shardulm94.trailing-spaces
 code --install-extension stkb.rewrap
-
-CONFIG_PATH="$HOME/.config"
-mkdir $CONFIG_PATH
 
 mkdir "${CONFIG_PATH}/nvim"
 ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"

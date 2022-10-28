@@ -6,6 +6,9 @@ then
     exit 1
 fi
 
+# Setup
+mkdir "~/dev"
+
 REPO_NAME=".files"
 CURRENT_PATH=$(pwd)
 REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
@@ -55,8 +58,6 @@ yay -S $PACKAGES
 
 git clone git://github.com/yylian/dotfiles.git $REPO_PATH
 
-# Setup
-mkdir "~/dev"
 mkdir "~/.ssh"
 
 CONFIG_PATH="$HOME/.config"
