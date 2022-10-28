@@ -1,6 +1,7 @@
 set fish_greeting ""
 set -x EDITOR nvim
 
+eval (/opt/homebrew/bin/brew shellenv)
 
 # Aliases definitions
 alias l="ls -lahF"
