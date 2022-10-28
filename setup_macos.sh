@@ -9,7 +9,7 @@ fi
 
 mkdir "~/dev"
 
-REPO_NAME=".files"
+REPO_NAME="dotfiles"
 CURRENT_PATH=$(pwd)
 REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
 DOTFILES_PATH="$REPO_PATH/dotfiles"
@@ -47,7 +47,7 @@ APP_BREWS=(
     fantastical
     firefox
     google-chrome
-    alacritty
+    kitty
     microsoft-teams
     telegram-desktop
     visual-studio-code
@@ -63,7 +63,7 @@ mas install 1295203466
 # Setup
 mkdir "~/.ssh"
 
-git clone git://github.com/yylian/dotfiles.git $REPO_NAME
+git clone https://github.com/yylian/dotfiles.git $REPO_PATH
 
 CONFIG_PATH="$HOME/.config"
 mkdir $CONFIG_PATH
@@ -86,10 +86,6 @@ ln -sf "${DOTFILES_PATH}/nvim/init.vim" "${CONFIG_PATH}/nvim"
 
 mkdir "${CONFIG_PATH}/kitty"
 ln -sf "${DOTFILES_PATH}/kitty/kitty.conf" "${CONFIG_PATH}/kitty"
-
-ln -sf "${DOTFILES_PATH}/git/.gitignore" $HOME
-ln -sf "${DOTFILES_PATH}/zsh/.zshrc" $HOME
-ln -sf "${DOTFILES_PATH}/alacritty/.alacritty.darwin.yml" "${HOME}/.alacritty.yml"
 
 osascript -e "tell application \"Finder\" to set desktop picture to \"${DOTFILES_PATH}/background.png\" as POSIX file"
 
