@@ -45,12 +45,9 @@ APP_BREWS=(
     firefox
     google-chrome
     alacritty
-    pycharm
     microsoft-teams
     telegram-desktop
-    virtualbox
     visual-studio-code
-    vmware-fusion
 )
 
 brew tap homebrew/cask-fonts
@@ -59,8 +56,6 @@ brew install --cask $APP_BREWS
 
 # Microsoft Remote Desktop 10
 mas install 1295203466
-# Gestimer
-mas install 990588172
 
 # Setup
 mkdir "~/dev"

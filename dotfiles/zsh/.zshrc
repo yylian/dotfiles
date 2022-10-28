@@ -33,10 +33,10 @@ alias findBigFiles='du -hs $(ls)'
 
 alias ssh='TERM=xterm-256color ssh'
 
-alias kubeclear='kubectx -u'
 alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'
+alias kclear='kubectx -u'
 
 alias glg="git log --oneline --decorate --graph --all"
 alias gst="git status"

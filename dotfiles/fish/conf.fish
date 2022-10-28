@@ -9,7 +9,7 @@ alias findBigFiles='du -hs $(ls)'
 
 alias ssh='TERM=xterm-256color command ssh'
 
-alias kubeclear='kubectx -u'
+alias kclear='kubectx -u'
 alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'

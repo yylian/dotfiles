@@ -1,15 +1,20 @@
 call plug#begin('~/.config/nvim')
 
 Plug 'sheerun/vim-polyglot'
-
 Plug 'pineapplegiant/spaceduck'
-
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 
 call plug#end()
+
+" Enable linenumbers
+set number
+" textwrap
+au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.tex setlocal textwidth=80
+
 
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -46,10 +51,6 @@ let g:lualine = {
       \}
 
   lua require("lualine").setup()
-
-" Textwrapping in md and tex files
-au BufRead,BufNewFile *.md setlocal textwidth=80
-au BufRead,BufNewFile *.tex setlocal textwidth=80
 
 " NERDTREE
 
