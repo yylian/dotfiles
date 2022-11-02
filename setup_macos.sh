@@ -75,6 +75,8 @@ git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
 git config --global pull.rebase true
 git config --global advice.statusHints false
+git config --global gpg.format ssh
+git config --global user.signingKey 'key::ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfZ39ddZU95Dv/h4KDLtiCnN9jLSLYllNWzsjvLqNm2C/PPimnc3FeboEEbBDuZzL3PWoTlvuHUSBAVzpxydu2zd8BdlJJ+SJWsael3qhf8hLBkzLhDUZHotGz0bX3wo720j1t/FhZidVGEGdNkGPSnN0tvryywroUPrjPawD452pR4WVPH8EzKSlJaS3kGk5K6NNkdqytY8/87MLvxqQcQfK/8Dd3zzQEXD5mX7ayhQ0Sv1lWlag+fyhT9gpamgvhi8gQKXTCCfKT2dOTTx9tPFH4LdMiwcQwnQYnJDhoKkJxAG+aygDk5Ynmnp8jujapbtKWoAyVyG+C54fz2YI1 julian@jarminowski.de'
 
 code --install-extension editorconfig.editorconfig
 code --install-extension k--kato.docomment
