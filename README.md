@@ -13,7 +13,7 @@ zsh -c "$(curl -fsSL https://raw.githubusercontent.com/yylian/dotfiles/master/se
 
 To add the ssh key permanent to the keystore on MacOS:
 ```
-ssh-add -k --apple-use-keychain ~/.ssh/id_rsa
+ssh-add -k --apple-use-keychain ~/.ssh/id_ed25519 
 ```
 On archlinux you will need to have followed the the [installation
 instructions](https://wiki.archlinux.org/index.php/installation_guide) and have
