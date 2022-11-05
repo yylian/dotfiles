@@ -14,7 +14,7 @@ set number
 " textwrap
 au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.tex setlocal textwidth=80
-
+au BufRead,BufNewFile *.md setlocal wrap
 
 if exists('+termguicolors')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
