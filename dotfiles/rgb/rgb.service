@@ -3,7 +3,7 @@ Description=OpenRGB control
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/openrgb --profile pinkblue
+ExecStart=/usr/bin/openrgb --profile pinkblue && liquidctl --match "Kraken Z" set lcd screen gif /home/yylian/Downloads/input.gif
 User=root
 Group=root
 

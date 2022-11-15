@@ -1,14 +1,14 @@
 * {
 	bg: #0f111b;
-	accent: #ecf0c1;
+	accent: #00a3cc;
 	fg: #818596;
 	background-color: @bg;
 	text-color: @fg;
 }
 
 window {
-	padding: 7px;
-	border: 1px;
+	padding:  7px 0px 7px 0px;
+	border: 3.5px;
 	border-color: @accent;
     width:  400px;
 }
@@ -17,9 +17,13 @@ prompt, entry {
 	text-color: @accent;
 }
 
+entry {
+	padding: 3px 7px 3px 7px;
+}
+
 element {
 	border-radius: 0px;
-	padding: 3px;
+	padding: 3px 10px 3px 10px;
 }
 
 element selected {
