@@ -105,6 +105,7 @@ osascript -e 'tell application "System Events" to set autohide of dock preferenc
 defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 15
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Finish
 echo "You may stillt want to configure the following things:"
