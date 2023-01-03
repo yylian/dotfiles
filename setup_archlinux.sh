@@ -1,29 +1,12 @@
 #! /bin/bash
 
-if [ ! -f "/etc/arch-release" ]
-then
-    echo "Aborting. These dotfiles are meant to be running on archlinux"
-    exit 1
-fi
-
-
-mkdir ~/dev
-
-REPO_NAME=".files"
-CURRENT_PATH=$(pwd)
-REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
-DOTFILES_PATH="$REPO_PATH/dotfiles"
-
-# Install applications
-if [ ! -f "$(which yay)" ]
-then
-    pacman -S --needed git base-devel
-    git clone https://aur.archlinux.org/yay-bin.git
-    cd yay-bin
-    makepkg -si
-    cd ..
-    rm -rf yay-bin
-fi
+# Isntall yay and packages
+pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+makepkg -si
+cd ..
+rm -rf yay-bin
 
 PACKAGES=(
     bitwarden
@@ -56,6 +39,18 @@ PACKAGES=(
 yay
 yay -S $PACKAGES
 
+# Install vim plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+mkdir ~/dev
+
+REPO_NAME=".files"
+CURRENT_PATH=$(pwd)
+REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
+DOTFILES_PATH="$REPO_PATH/dotfiles"
+
+
 git clone https://github.com/yylian/dotfiles.git $REPO_PATH
 
 mkdir ~/.ssh
@@ -74,10 +69,7 @@ git config --global gpg.format ssh
 git config --global commit.gpgsign true
 git config --global user.signingkey 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de'
 
-code --install-extension editorconfig.editorconfig
-code --install-extension k--kato.docomment
-code --install-extension shardulm94.trailing-spaces
-code --install-extension stkb.rewrap
+
 
 ln -sf "$DOTFILES_PATH/fish/config.fish" "$CONFIG_PATH/fish"
 
@@ -86,8 +78,3 @@ ln -sf "$DOTFILES_PATH/nvim/init.vim" "$CONFIG_PATH/nvim"
 
 mkdir "$CONFIG_PATH/kitty"
 ln -sf "$DOTFILES_PATH/kitty/kitty.conf" "$CONFIG_PATH/kitty"
-
-# Finish
-echo "You may still want to configure the following things:"
-echo "  - Enable color and ILoveCandy output in /etc/pacman.conf"
-echo "Reboot."
