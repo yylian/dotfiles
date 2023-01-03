@@ -1,23 +1,19 @@
 # dotfiles
 
-These are my very own dotfiles. The setup script is supposed to only work on
-OSX, but the asset files such as `.zshrc`, or the alacritty config, do work
-cross-platform.
+These are my very own dotfiles. The setup scripts are just a guide, not intended
+for actual execution. The config files are mostly cross platform compatible,
+there should be no problem running them on either Linux or MacOs.
 
 ## Setup
 
-Setup like this on macOS directly after finishing the installation:
-```
-zsh -c "$(curl -fsSL https://raw.githubusercontent.com/yylian/dotfiles/master/setup_macos.sh)"
-```
-
 To add the ssh key permanent to the keystore on MacOS:
 ```
-ssh-add -k --apple-use-keychain ~/.ssh/id_ed25519 
+ssh-add --apple-use-keychain ~/.ssh/id_ed25519
 ```
-On archlinux you will need to have followed the the [installation
-instructions](https://wiki.archlinux.org/index.php/installation_guide) and have
-a user with sudo permissions `(yylian ALL=(ALL) NOPASSWD:ALL)`, [pam](https://wiki.archlinux.org/title/SSH_keys#pam_ssh) and curl. As display manager  [ly](https://github.com/nullgemm/ly) is used, voicefiltering over [LADSPA](https://medium.com/@gamunu/linux-noise-cancellation-b9f997f6764d)
+
+To set the pumpled to a gif on Linux:
 ```
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/yylian/dotfiles/master/setup_archlinux.sh)"
+sudo liquidctl --match "Kraken Z" set lcd screen brightness 10
+sudo liquidctl --match "Kraken Z" set lcd screen orientation 270
+sudo liquidctl --match "Kraken Z" set lcd screen gif /home/yylian/Downloads/star_wars_cropped_central.gif
 ```

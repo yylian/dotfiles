@@ -63,8 +63,10 @@ mkdir "$HOME/.config"
 
 mkdir "$HOME/.config/nvim"
 mkdir "$HOME/.config/fish"
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/nvim/init.vim" "$HOME/.config/nvim"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish/functions"
 
 # Link folders
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config/git"
