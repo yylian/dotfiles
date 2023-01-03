@@ -43,23 +43,9 @@ yay -S $PACKAGES
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-mkdir ~/dev
-
-REPO_NAME=".files"
-CURRENT_PATH=$(pwd)
-REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
-DOTFILES_PATH="$REPO_PATH/dotfiles"
-
-
+# git stuff
+REPO_PATH="/home/yylian/dev/dotfiles"
 git clone https://github.com/yylian/dotfiles.git $REPO_PATH
-
-mkdir ~/.ssh
-
-CONFIG_PATH="$HOME/.config"
-mkdir $CONFIG_PATH
-
-mkdir "${CONFIG_PATH}/git"
-ln -sf "${DOTFILES_PATH}/git/.gitignore" "${CONFIG_PATH}/git/ignore"
 
 git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
@@ -69,12 +55,18 @@ git config --global gpg.format ssh
 git config --global commit.gpgsign true
 git config --global user.signingkey 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de'
 
+# Create dirs and link files
+mkdir "$HOME/dev"
+mkdir "$HOME/.ssh"
+mkdir "$HOME/.config"
 
+mkdir "$HOME/.config/nvim"
+mkdir "$HOME/.config/fish"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish/functions"
 
-ln -sf "$DOTFILES_PATH/fish/config.fish" "$CONFIG_PATH/fish"
-
-mkdir "$CONFIG_PATH/nvim"
-ln -sf "$DOTFILES_PATH/nvim/init.vim" "$CONFIG_PATH/nvim"
-
-mkdir "$CONFIG_PATH/kitty"
-ln -sf "$DOTFILES_PATH/kitty/kitty.conf" "$CONFIG_PATH/kitty"
+# Link folders
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config/git"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config/kitty"
