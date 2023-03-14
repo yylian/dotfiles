@@ -44,7 +44,7 @@ CONFIG_PATH="$HOME/.config"
 mkdir $CONFIG_PATH
 
 mkdir "${CONFIG_PATH}/git"
-ln -sf "${DOTFILES_PATH}/git/.gitignore" "${CONFIG_PATH}/git/ignore"
+ln -sf "${DOTFILES_PATH}/git/ignore" "${CONFIG_PATH}/git/ignore"
 
 git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
@@ -61,11 +61,11 @@ mkdir "$HOME/.config"
 
 mkdir "$HOME/.config/nvim"
 mkdir "$HOME/.config/fish"
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fish/config.fish"
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish/functions"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fish/config.fish"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish/functions"
 
 # Link folders
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config/git"
-ln -sf "/Users/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config/kitty"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config/git"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config/kitty"
