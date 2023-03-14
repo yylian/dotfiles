@@ -1,29 +1,8 @@
-#! /bin/bash
 
-if [ ! -f "/etc/arch-release" ]
-then
-    echo "Aborting. These dotfiles are meant to be running on archlinux"
-    exit 1
-fi
-
-
-mkdir ~/dev
-
-REPO_NAME=".files"
+REPO_NAME="dotfiles"
 CURRENT_PATH=$(pwd)
 REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
 DOTFILES_PATH="$REPO_PATH/dotfiles"
-
-# Install applications
-if [ ! -f "$(which yay)" ]
-then
-    pacman -S --needed git base-devel
-    git clone https://aur.archlinux.org/yay-bin.git
-    cd yay-bin
-    makepkg -si
-    cd ..
-    rm -rf yay-bin
-fi
 
 PACKAGES=(
     bitwarden
@@ -38,7 +17,7 @@ PACKAGES=(
     man
     ncdu
     neovim
-    nerd-fonts-hasklig
+    otf-hasklig-nerd
     openssh
     reflector
     rsync
@@ -51,12 +30,13 @@ PACKAGES=(
     whois
     zoxide
     zip
+
+    fnm
+    starship
 )
 
 yay
 yay -S $PACKAGES
-
-git clone https://github.com/yylian/dotfiles.git $REPO_PATH
 
 mkdir ~/.ssh
 
