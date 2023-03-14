@@ -1,12 +1,8 @@
-#! /bin/bash
 
-# Isntall yay and packages
-pacman -S --needed git base-devel
-git clone https://aur.archlinux.org/yay-bin.git
-cd yay-bin
-makepkg -si
-cd ..
-rm -rf yay-bin
+REPO_NAME="dotfiles"
+CURRENT_PATH=$(pwd)
+REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
+DOTFILES_PATH="$REPO_PATH/dotfiles"
 
 PACKAGES=(
     bitwarden
@@ -21,7 +17,7 @@ PACKAGES=(
     man
     ncdu
     neovim
-    nerd-fonts-hasklig
+    otf-hasklig-nerd
     openssh
     reflector
     rsync
@@ -34,18 +30,21 @@ PACKAGES=(
     whois
     zoxide
     zip
+
+    fnm
+    starship
 )
 
 yay
 yay -S $PACKAGES
 
-# Install vim plug
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir ~/.ssh
 
-# git stuff
-REPO_PATH="/home/yylian/dev/dotfiles"
-git clone https://github.com/yylian/dotfiles.git $REPO_PATH
+CONFIG_PATH="$HOME/.config"
+mkdir $CONFIG_PATH
+
+mkdir "${CONFIG_PATH}/git"
+ln -sf "${DOTFILES_PATH}/git/.gitignore" "${CONFIG_PATH}/git/ignore"
 
 git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
