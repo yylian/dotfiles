@@ -23,3 +23,13 @@ symbol = ":"
 format = '[[$symbol](fg)$context([@](fg)$namespace)]($style)'
 style = 'white'
 disabled = false
+
+[kubernetes.context_aliases]
+other_style = 'blue'
+'dev.local.cluster.k8s' = 'dev'
+
+'5m-prod' = '5m_⚠️_ctx'
+'5m-dev' = '5m_🥶_ctx'
+'5m-stg' = '5m_☘️_ctx'
+
+

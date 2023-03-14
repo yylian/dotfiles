@@ -37,8 +37,8 @@ kubectl completion fish | source
 # Starship rs
 starship init fish | source
 # Python pyenv
-# pyenv init - | source
-# pyenv virtualenv-init - | source
+pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 
 
 # mclist
