@@ -22,6 +22,10 @@ default_border pixel 3
 default_floating_border pixel 3
 gaps inner 8
 
+# Fix screensharing
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+
 # Keyboard
 input "17011:121:Boardsource_Technik-O" {
     repeat_rate 30
