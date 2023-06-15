@@ -30,9 +30,10 @@ PACKAGES=(
     whois
     zoxide
     zip
-
     fnm
     starship
+
+    hyprland hyprpaper
 )
 
 yay
