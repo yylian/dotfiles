@@ -71,3 +71,4 @@ ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish/f
 # Link folders
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config/git"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config/kitty"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/hypr" "$HOME/.config/hypr"
