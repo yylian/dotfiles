@@ -9,10 +9,11 @@ PACKAGES=(
     discord
     dolphin
     fish
-    grim slurp wl-clipboard
     firefox
+    grim slurp wl-clipboard
     htop
     kitty
+    keychain
     kubectx
     man
     ncdu
