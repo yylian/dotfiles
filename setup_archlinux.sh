@@ -6,12 +6,12 @@ DOTFILES_PATH="$REPO_PATH/dotfiles"
 
 PACKAGES=(
     bitwarden
-    discord
     dolphin
     fish
     firefox
     grim slurp wl-clipboard
     htop
+    hyprland hyprpaper
     kitty
     keychain
     kubectx
@@ -34,7 +34,8 @@ PACKAGES=(
     fnm
     starship
 
-    hyprland hyprpaper
+    lutris steam proton-ge-custom-bin
+    discord
 )
 
 yay
