@@ -34,6 +34,8 @@ PACKAGES=(
     fnm
     starship
 
+    pyenv pyenv-virtualenv
+
     lutris steam proton-ge-custom-bin
     discord
 )
