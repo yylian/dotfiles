@@ -2,7 +2,7 @@
 add_newline = false
 scan_timeout = 10
 
-format = "$directory(.$git_status$git_branch)$kubernetes "
+format = "$directory(.$git_status$git_branch)$kubernetes${env_var.ARM_STAGE}${env_var.ARM_PROD} "
 
 [directory]
 format = "[$path]($style)"
@@ -27,5 +27,17 @@ disabled = false
 [kubernetes.context_aliases]
 other_style = 'blue'
 
-'admin@5Minds/prod' = '5m_❌'
-'admin@5Minds/dev' = '5m_🥶'
+
+[env_var.ARM_STAGE]
+default = ''
+style = "bold yellow"
+symbol = '</>'
+format = '[([$symbol](fg)$env_value)]($style)'
+
+[env_var.ARM_PROD]
+default = ''
+style = "bold red"
+symbol = '</>'
+format = '[([$symbol](fg)$env_value)]($style)'
+
+

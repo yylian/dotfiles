@@ -34,6 +34,10 @@ PACKAGES=(
     fnm
     starship
 
+    jq 
+    fzf # Search
+    zstd # Better compression algorithm
+
     pyenv pyenv-virtualenv
 
     lutris steam proton-ge-custom-bin
@@ -54,9 +58,11 @@ ln -sf "${DOTFILES_PATH}/git/ignore" "${CONFIG_PATH}/git/ignore"
 git config --global core.excludesfile '~/.config/git/ignore'
 git config --global init.defaultBranch main
 git config --global pull.rebase true
+git config --global push.autosetupremote true
 git config --global advice.statusHints false
 git config --global gpg.format ssh
 git config --global commit.gpgsign true
+git config --global tag.gpgsign true
 git config --global user.signingkey 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de'
 git config --global rebase.autosquash true
 
@@ -70,9 +76,10 @@ mkdir "$HOME/.config/fish"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/starship/starship.toml" "$HOME/.config/starship.toml"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fish/config.fish"
-ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish/functions"
+
 
 # Link folders
-ln -sf "/home/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config/git"
-ln -sf "/home/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config/kitty"
-ln -sf "/home/yylian/dev/dotfiles/dotfiles/hypr" "$HOME/.config/hypr"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/hypr" "$HOME/.config"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish"
