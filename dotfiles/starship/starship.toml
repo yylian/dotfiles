@@ -26,7 +26,7 @@ disabled = false
 
 [kubernetes.context_aliases]
 'cluster-prod-sovity' = 'prod_❌'
-'cluster-stage-sovity' = 'stage_🥶'
+'cluster-stage-sovity' = 'stage_⚠️'
 
 
 [env_var.ARM_STAGE]
