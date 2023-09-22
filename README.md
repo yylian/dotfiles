@@ -36,6 +36,17 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin yylian %I $TERM
 
 Checkout the Hyprland site about [configuration](https://wiki.hyprland.org/Useful-Utilities/)
 
+## Regenerate 
+```shell
+cryptsetup luksOpen /dev/nvme0n1p2 root_volume
+mkdir /mnt/volume
+mount /dev/mapper/root_volume /mnt/volume
+mount /dev/nvme0n1p1 /mnt/volume/@/boot
+arch-chroot /mnt/volume
+# Inside the chroot:
+mkinitcpio -p linux
+```
+
 ## Latex Workshop
 
 ```
