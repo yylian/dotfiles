@@ -7,6 +7,7 @@ format = "$directory(.$git_status$git_branch)$kubernetes${env_var.ARM_STAGE}${en
 [directory]
 format = "[$path]($style)"
 style = "cyan"
+
 truncation_length = 1
 truncation_symbol = ""
 

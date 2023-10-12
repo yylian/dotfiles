@@ -25,6 +25,7 @@ alias gco="git checkout"
 alias gcp="git cherry-pick"
 alias gpf="git pull --all && git fetch --prune"
 alias gdb="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git branch -d && git remote prune origin"
+alias gdl="git branch | grep -v 'main' | xargs git branch -D"
 
 # Application sourcing
 
