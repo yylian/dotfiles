@@ -19,6 +19,9 @@ alias k='kubectl'
 alias kctx='kubectx'
 alias kns='kubens'
 
+alias tinit='terragrunt init'
+alias tapply='terragrunt apply'
+
 alias glg="git log --oneline --decorate --graph --all"
 alias gst="git status"
 alias gco="git checkout"

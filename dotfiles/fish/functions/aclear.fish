@@ -1,4 +1,4 @@
-function azure_clear
+function aclear
 	set -e ARM_TENANT_ID
     set -e ARM_SUBSCRIPTION_ID
     set -e ARM_CLIENT_ID
