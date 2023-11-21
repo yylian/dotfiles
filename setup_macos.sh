@@ -61,6 +61,8 @@ git config --global gpg.format ssh
 git config --global commit.gpgsign true
 git config --global tag.gpgsign true
 git config --global user.signingkey 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de'
+git config --global merge.autoStash true
+git config --global rebase.autoStash true
 git config --global rebase.autosquash true
 
 # Create dirs and link files
