@@ -25,10 +25,15 @@ format = '[[$symbol](fg)$context([@](fg)$namespace)]($style)'
 style = 'white'
 disabled = false
 
-[kubernetes.context_aliases]
-'cluster-prod-sovity' = 'prod_❌'
-'cluster-stage-sovity' = 'stage_⚠️'
+[[kubernetes.contexts]]
+context_pattern = ".*stage.*"
+style = "yellow"
+context_alias = "stage"
 
+[[kubernetes.contexts]]
+context_pattern = ".*prod.*"
+style = "red"
+context_alias = "prod"
 
 [env_var.ARM_STAGE]
 default = ''
