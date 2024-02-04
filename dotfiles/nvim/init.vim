@@ -1,5 +1,10 @@
 call plug#begin('~/.config/nvim')
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+Plug 'tpope/vim-sleuth'
+
 Plug 'sheerun/vim-polyglot'
 Plug 'pineapplegiant/spaceduck'
 Plug 'hoob3rt/lualine.nvim'
@@ -51,15 +56,3 @@ let g:lualine = {
       \}
 
   lua require("lualine").setup()
-
-" NERDTREE
-
-" Start NERDTree. If a file is specified, move the cursor to its window.
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
-let NERDTreeShowHidden=1
-
-" Start NERDTree when Vim starts with a directory argument.
-autocmd StdinReadPre * let s:std_in=1
-" Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif

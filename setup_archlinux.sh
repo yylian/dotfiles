@@ -21,6 +21,7 @@ PACKAGES=(
     otf-hasklig-nerd
     openssh
     reflector
+    ripgrep
     rsync
     rofi
     telegram-desktop
