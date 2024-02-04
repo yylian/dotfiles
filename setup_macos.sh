@@ -13,6 +13,7 @@ CLI_BREWS=(
     mas
     neovim
     fnm
+    ripgrep
     tmux
     wget
     z
