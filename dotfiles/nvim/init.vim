@@ -3,6 +3,8 @@ call plug#begin('~/.config/nvim')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
+Plug 'tpope/vim-sleuth'
+
 Plug 'sheerun/vim-polyglot'
 Plug 'pineapplegiant/spaceduck'
 Plug 'hoob3rt/lualine.nvim'
