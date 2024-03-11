@@ -11,6 +11,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -27,7 +28,14 @@ if exists('+termguicolors')
     set termguicolors
 endif
 
+
 colorscheme spaceduck
+" Update color of comments to better readabillity
+highlight Comment ctermfg=darkgray guifg=#888888
+
+
+" Enable smartcas
+set smartcase
 
 let g:lualine = {
       \'options' : {

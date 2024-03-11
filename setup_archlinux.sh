@@ -9,6 +9,7 @@ PACKAGES=(
     dolphin
     fish
     firefox
+    findomain-git
     grim slurp wl-clipboard
     htop
     hyprland hyprpaper
