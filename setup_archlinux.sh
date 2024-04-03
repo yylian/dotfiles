@@ -24,7 +24,7 @@ PACKAGES=(
     reflector
     ripgrep
     rsync
-    rofi
+    walker
     telegram-desktop
     ttf-apple-emoji
     vim-plug
