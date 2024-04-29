@@ -1,0 +1,26 @@
+[core]
+	excludesfile = ~/.config/git/ignore
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[advice]
+	statusHints = true
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+	verbose = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de
+	name = yylian
+	email = julian@jarminowski.de
+[rebase]
+	autosquash = true
+	autoStash = true
+[push]
+	autosetupremote = true
+[tag]
+	gpgsign = true
+[merge]
+	autoStash = true

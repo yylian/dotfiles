@@ -12,6 +12,8 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tmsvg/pear-tree'
+
 
 call plug#end()
 
@@ -47,16 +49,16 @@ let g:lualine = {
       \'sections' : {
       \  'lualine_a' : [ ['mode', {'upper': v:true,},], ],
       \  'lualine_b' : [ ['branch', {'icon': '',}, ], ],
-      \  'lualine_c' : [ ['filename', {'file_status': v:true,},], ],
-      \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype' ],
-      \  'lualine_y' : [ 'progress' ],
-      \  'lualine_z' : [ 'location'  ],
+      \  'lualine_c' : { 'filename': { 'path': 1, 'file_status': v:true, },},
+      \  'lualine_x' : [ 'encoding', 'fileformat', 'filetype', ],
+      \  'lualine_y' : [ 'progress', ],
+      \  'lualine_z' : [ 'location',  ],
       \},
       \'inactive_sections' : {
       \  'lualine_a' : [  ],
       \  'lualine_b' : [  ],
-      \  'lualine_c' : [ 'filename' ],
-      \  'lualine_x' : [ 'location' ],
+      \  'lualine_c' : [ 'filename', ],
+      \  'lualine_x' : [ 'location', ],
       \  'lualine_y' : [  ],
       \  'lualine_z' : [  ],
       \},
