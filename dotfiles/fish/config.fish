@@ -34,8 +34,6 @@ alias gdl="git branch | grep -v 'main' | xargs git branch -D"
 
 # z
 zoxide init fish | source
-# fnm
-fnm env --use-on-cd | source
 # fzf
 fzf --fish | source
 # kubectl
