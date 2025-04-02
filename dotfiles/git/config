@@ -1,26 +1,51 @@
 [core]
-	excludesfile = ~/.config/git/ignore
+    excludesfile = ~/.config/git/ignore
+    fsmonitor = true
+    untrackedCache = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [pull]
-	rebase = true
-[advice]
-	statusHints = true
-[gpg]
-	format = ssh
-[commit]
-	gpgsign = true
-	verbose = true
-[user]
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de
-	name = yylian
-	email = julian@jarminowski.de
-[rebase]
-	autosquash = true
-	autoStash = true
+    rebase = true
 [push]
-	autosetupremote = true
+    autosetupremote = true
+    followTags = true
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
+[advice]
+    statusHints = true
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+    verbose = true
+[user]
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHPN3sulvGbTMs1WtoAnkd4dRt6I2sfaaN08wFJaLp8A julian@jarminowski.de
+    name = yylian
+    email = julian@jarminowski.de
+[rebase]
+    autosquash = true
+    autoStash = true
+    updateRefs = true
+[rerere]
+    enabled = true
+    autoupdate = true
 [tag]
-	gpgsign = true
+    gpgsign = true
+    sort = version:refname
 [merge]
-	autoStash = true
+    autoStash = true
+    conflictstyle = zdiff3
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
+[help]
+    autocorrect = prompt
+

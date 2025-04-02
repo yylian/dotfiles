@@ -43,7 +43,7 @@ PACKAGES=(
     pyenv pyenv-virtualenv
 
     lutris steam proton-ge-custom-bin
-    discord
+    legcord-bin
 )
 
 yay
