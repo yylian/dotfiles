@@ -9,6 +9,7 @@ end
 
 # Aliases definitions
 alias l="ls -lahF"
+alias tss="toggle_sound_sink"
 alias reload="source ~/.config/fish/config.fish"
 alias findBigFiles='du -hs $(ls)'
 
