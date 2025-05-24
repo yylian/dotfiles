@@ -34,7 +34,7 @@ APP_BREWS=(
     kitty
     microsoft-teams
     pritunl
-    telegram-desktop
+    telegram
     visual-studio-code
 )
 

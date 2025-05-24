@@ -1,7 +1,7 @@
 [core]
     excludesfile = ~/.config/git/ignore
-    fsmonitor = true
-    untrackedCache = true
+    # fsmonitor = true
+    # untrackedCache = true
 [init]
     defaultBranch = main
 [pull]
