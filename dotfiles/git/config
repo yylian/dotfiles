@@ -8,7 +8,7 @@
     rebase = true
 [push]
     autosetupremote = true
-    followTags = true
+    # followTags = true
 [fetch]
     prune = true
     pruneTags = true
