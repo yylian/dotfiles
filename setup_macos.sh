@@ -25,8 +25,8 @@ CLI_BREWS=(
 )
 
 APP_BREWS=(
-    1password
     alfred
+    bitwarden
     docker
     fantastical
     firefox
