@@ -5,6 +5,7 @@ REPO_PATH="$CURRENT_PATH/dev/$REPO_NAME"
 DOTFILES_PATH="$REPO_PATH/dotfiles"
 
 PACKAGES=(
+    blueberry
     bitwarden
     dolphin
     fish
@@ -24,7 +25,6 @@ PACKAGES=(
     reflector
     ripgrep
     rsync
-    walker
     telegram-desktop
     ttf-apple-emoji
     vim-plug
@@ -35,6 +35,9 @@ PACKAGES=(
     zip
     fnm
     starship
+    walker-bin
+
+    linux-headers xpadneo-dkms
 
     jq 
     fzf # Search
