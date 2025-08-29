@@ -27,7 +27,7 @@ CLI_BREWS=(
 APP_BREWS=(
     alfred
     bitwarden
-    docker
+    docker-desktop
     fantastical
     firefox
     google-chrome
