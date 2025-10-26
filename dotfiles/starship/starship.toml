@@ -36,15 +36,13 @@ style = "red"
 context_alias = "prod"
 
 [env_var.ARM_STAGE]
-default = ''
-style = "bold yellow"
-symbol = '</>'
-format = '[([$symbol](fg)$env_value)]($style)'
+default = ""
+style = "yellow"
+format = '[((fg)$env_value)]($style)'
 
 [env_var.ARM_PROD]
-default = ''
-style = "bold red"
-symbol = '</>'
-format = '[([$symbol](fg)$env_value)]($style)'
+default = ""
+style = "red"
+format = '[((fg)$env_value)]($style)'
 
 

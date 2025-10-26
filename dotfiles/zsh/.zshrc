@@ -55,7 +55,7 @@ alias gdb="git branch --merged | egrep -v '(^\*|master|dev|main)' | xargs git br
 eval "$(fnm env)"
 
 # kubectl
-source <(kubectl completion zsh)
+kubectl completion fish | source
 
 # mclist
 mclist_ip() { echo "2a01:04f8:0252:1ce6::$1:0" }
