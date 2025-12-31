@@ -65,6 +65,6 @@ function backup; rsync --verbose --recursive --delete-before --whole-file --time
 if status is-login
     if test -z "$DISPLAY" -a "$XDG_VTNR" = 1
         sleep 2
-        exec Hyprland
+        exec start-hyprland
     end
 end
