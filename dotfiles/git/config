@@ -48,9 +48,3 @@
     renames = true
 [help]
     autocorrect = prompt
-
-[credential "https://github.com"]
-    helper = "gh auth git-credential"
-    useHttpPath = true
-[url "git@github.com:"]
-	insteadOf = https://github.com/

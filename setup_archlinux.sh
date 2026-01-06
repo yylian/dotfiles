@@ -73,6 +73,8 @@ git config --global merge.autoStash true
 git config --global rebase.autoStash true
 git config --global rebase.autosquash true
 
+echo "font-size = 12" >> "${DOTFILES_PATH}/ghostty/system"
+
 # Create dirs and link files
 mkdir "$HOME/dev"
 mkdir "$HOME/.ssh"
