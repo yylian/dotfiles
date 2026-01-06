@@ -1,3 +1,6 @@
+# system custom config
+config-file = ?system
+
 # Font
 font-family = "Hasklug Nerd Font Mono"
 
