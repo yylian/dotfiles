@@ -28,12 +28,17 @@ disabled = false
 [[kubernetes.contexts]]
 context_pattern = ".*stage.*"
 style = "yellow"
-context_alias = "stage"
+context_alias = "stage€"
 
 [[kubernetes.contexts]]
-context_pattern = ".*prod.*"
+context_pattern = ".*prod-sovity.*"
 style = "red"
-context_alias = "prod"
+context_alias = "prod€"
+
+[[kubernetes.contexts]]
+context_pattern = ".*prod-sovdemo.*"
+style = "purple"
+context_alias = "prod¥"
 
 [env_var.ARM_STAGE]
 default = ""
