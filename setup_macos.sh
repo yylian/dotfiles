@@ -81,6 +81,7 @@ ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fis
 # Link folders
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config"
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/ghostty" "$HOME/.config"
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish"
 
 # Configure macos

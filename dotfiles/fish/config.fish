@@ -15,8 +15,6 @@ alias findBigFiles='du -hs $(ls)'
 
 alias ssh='TERM=xterm-256color command ssh'
 
-alias bw='env NODE_TLS_REJECT_UNAUTHORIZED=0 bw'
-
 alias kclear='kubectx -u'
 alias k='kubectl'
 alias kctx='kubectx'

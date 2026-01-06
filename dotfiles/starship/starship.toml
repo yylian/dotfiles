@@ -44,5 +44,3 @@ format = '[((fg)$env_value)]($style)'
 default = ""
 style = "red"
 format = '[((fg)$env_value)]($style)'
-
-

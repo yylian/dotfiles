@@ -87,6 +87,7 @@ ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fish
 
 # Link folders
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config"
+ln -sf "/home/yylian/dev/dotfiles/dotfiles/ghostty" "$HOME/.config"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/hypr" "$HOME/.config"
 ln -sf "/home/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish"

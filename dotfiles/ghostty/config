@@ -1,0 +1,21 @@
+# Font
+font-family = "Hasklug Nerd Font Mono"
+
+# Scrollback
+scrollback-limit = 1073741824
+
+# Bell
+bell-features = no-audio
+
+# Colors
+theme = "spaceduck"
+
+# Shell integration
+shell-integration = fish
+
+# macOS specific
+macos-titlebar-style = hidden
+macos-icon = holographic
+
+# Enable option + backspace to delete word
+keybind = option+backspace=text:\x1b\x7f
