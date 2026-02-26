@@ -36,6 +36,17 @@ ExecStart=-/sbin/agetty -o '-p -f -- \\u' --noclear --autologin yylian %I $TERM
 
 Checkout the Hyprland site about [configuration](https://wiki.hyprland.org/Useful-Utilities/)
 
+## vim
+
+```
+g~ [motion] - to switch all under motion to upper/lower
+C - deletes till EOL and then inser
+D - deletes till EOL
+A - jump to EOL in append mode
+P - paste without overriding buffer in visual mode
+```
+
+
 ## Regenerate 
 ```shell
 cryptsetup luksOpen /dev/nvme0n1p2 root_volume
