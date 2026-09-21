@@ -1,0 +1,2 @@
+# Allow searching case-insensitively for lowercase
+--smart-case

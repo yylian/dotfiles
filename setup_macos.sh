@@ -4,6 +4,7 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 CLI_BREWS=(
+    age
     findomain
     font-hasklug-nerd-font
     git
@@ -12,6 +13,7 @@ CLI_BREWS=(
     kubernetes-cli
     mas
     neovim
+    opentofu
     fnm
     findomain
     ripgrep
@@ -49,6 +51,8 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Install Microsoft Remote Desktop 10
 mas install 1295203466
+# Install Wireguard
+mas install 1451685025
 
 # git stuff
 REPO_PATH="/Users/yylian/dev/dotfiles"
@@ -80,6 +84,7 @@ ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/config.fish" "$HOME/.config/fis
 
 # Link folders
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/git" "$HOME/.config"
+ln -sf "/Users/yylian/dev/dotfiles/dotfiles/ripgrep" "$HOME/.config"
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/kitty" "$HOME/.config"
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/ghostty" "$HOME/.config"
 ln -sf "/Users/yylian/dev/dotfiles/dotfiles/fish/functions" "$HOME/.config/fish"

@@ -1,6 +1,7 @@
 set fish_greeting ""
 set -x EDITOR nvim
-
+set -x RIPGREP_CONFIG_PATH ~/.config/ripgrep/config
+set -Ux SOPS_AGE_KEY_FILE ~/.config/sops/age/keys.txt
 
 switch (uname)
     case Darwin
