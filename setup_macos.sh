@@ -17,6 +17,7 @@ CLI_BREWS=(
     fnm
     findomain
     ripgrep
+    sops
     tmux
     wget
     z
