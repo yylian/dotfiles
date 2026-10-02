@@ -7,6 +7,7 @@ DOTFILES_PATH="$REPO_PATH/dotfiles"
 PACKAGES=(
     blueberry
     bitwarden
+    direnv
     dolphin
     fish
     firefox

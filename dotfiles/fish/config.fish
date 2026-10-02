@@ -33,6 +33,9 @@ alias gtb="git branch | grep -v 'main' | xargs git branch -D"
 
 # Application sourcing
 
+
+# direnv
+direnv hook fish | source
 # z
 zoxide init fish | source
 # fzf

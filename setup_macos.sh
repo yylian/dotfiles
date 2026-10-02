@@ -5,6 +5,7 @@
 
 CLI_BREWS=(
     age
+    direnv
     findomain
     font-hasklug-nerd-font
     git
